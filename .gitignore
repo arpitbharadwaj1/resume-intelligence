@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# Environment — never commit real keys
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Testing
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# Supabase
+.supabase/
+
+# Editor / OS
+.DS_Store
+.idea/
+*.swp
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Scratch — never commit real resumes or JDs.
+# Test fixtures are synthetic and live in tests/fixtures/ (committed).
+# Anything personal or third-party goes here and stays out of git.
+scratch/
+tmp/

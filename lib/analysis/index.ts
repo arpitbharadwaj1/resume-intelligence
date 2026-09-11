@@ -62,7 +62,44 @@ export { inferProfile, type ResumeProfile, type Seniority } from "./profile";
 export { extractContactFeatures } from "./contact";
 export { extractStructureFeatures } from "./structure";
 export { extractFormattingFeatures } from "./formatting";
+export {
+  extractSkillsFeatures,
+  extractSkillsFeaturesWithEvidence,
+  type SkillEvidence,
+} from "./skills";
+export {
+  extractExperienceRuleSignals,
+  assembleExperienceFeatures,
+  experienceBulletsForClassification,
+  extractExperienceFeatures,
+  type ExperienceRuleSignal,
+  type ExperienceRuleSignals,
+} from "./experience";
+export {
+  extractImpactRuleSignals,
+  assembleImpactFeatures,
+  quantifiedBulletsForClassification,
+  extractImpactFeatures,
+  type ImpactRuleSignals,
+} from "./impact";
 export { segmentEntries, type ExperienceEntry } from "./segment";
+export {
+  collectRoleBullets,
+  bulletsInMostRecentRole,
+  type RoleBullet,
+} from "./bullets";
+export {
+  ternaryScore,
+  outcomeScore,
+  type Ternary,
+  type OutcomeVerdict,
+  type ResumeClassifier,
+  type ClassifiableBullet,
+  type ClassifiableSkillBullet,
+  type ExperienceVerdict,
+  type OutcomeClassification,
+  type SkillEvidenceVerdict,
+} from "./classifier";
 export {
   parseDateRange,
   hasDateRange,

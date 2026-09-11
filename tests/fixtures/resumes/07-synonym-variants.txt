@@ -1,0 +1,59 @@
+Bronwyn Adeyemi-Sokolov
+Adelaide, SA
+bronwyn.as@examplemail.test
++61 419 330 274
+linkedin.com/in/bronwynadeyemi
+github.com/bronwyn-as
+
+
+SUMMARY
+
+Full stack engineer working across JS and TS services, with most infrastructure
+running on Amazon Web Services and K8s.
+
+
+EXPERIENCE
+
+Senior Full Stack Engineer
+Gallowglass Freight Tech, Adelaide, SA
+Apr 2022 - Present
+
+- Migrated the customer portal from a legacy template stack to React.js and TS,
+  reducing the first contentful paint from 3.8 seconds to 1.2 seconds.
+- Moved 11 batch workloads from bare EC2 onto K8s, cutting compute spend by
+  29 percent while improving scheduling reliability.
+- Redesigned the Postgres schema behind the rating engine, which brought the slowest
+  quote query from 4.2 seconds down to 180 milliseconds.
+- Built an internal CLI in JS that automated release tagging and changelog
+  generation, saving roughly 5 hours of engineer time per release.
+- Introduced infrastructure as code across the Amazon Web Services estate, reducing
+  environment drift tickets by 74 percent over two quarters.
+
+Full Stack Developer
+Pemberwick Rail Analytics, Adelaide, SA
+Jan 2019 - Mar 2022
+
+- Delivered a scheduling dashboard in React.js consumed by 340 depot staff daily.
+- Tuned Postgres indexes and query plans, reducing the nightly report window from
+  5 hours to 50 minutes.
+- Containerised 8 services and deployed them to K8s, which removed the last
+  hand-configured production host.
+- Ported the reporting service from plain JS to TS, eliminating a recurring class of
+  runtime type error that had caused 6 production incidents.
+- Configured Amazon Web Services networking and IAM boundaries for a new regional
+  deployment serving 2 additional states.
+
+
+EDUCATION
+
+Bachelor of Computer Science
+Fernbrook Institute of Technology, Adelaide, SA
+Feb 2015 - Nov 2018
+
+
+SKILLS
+
+Languages: JS, TS, Python
+Frontend: React.js, Redux, Sass
+Backend and Data: Node.js, Postgres, Redis
+Cloud and Platform: Amazon Web Services, K8s, Docker, Terraform

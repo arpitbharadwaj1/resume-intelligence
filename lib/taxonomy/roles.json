@@ -1,0 +1,571 @@
+[
+  {
+    "aliases": ["Android Engineer", "Android Software Engineer", "Mobile Developer (Android)"],
+    "canonical": "Android Developer",
+    "commonSkills": ["Android Jetpack", "Firebase", "Git", "REST APIs", "Unit Testing"],
+    "coreSkills": ["Android Development", "Java", "Jetpack Compose", "Kotlin"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Build and maintain Android application features against product requirements",
+      "Instrument analytics and crash reporting to monitor release health",
+      "Integrate REST or GraphQL APIs and handle offline and error states",
+      "Optimize application startup time, memory use and battery consumption",
+      "Prepare release builds and manage store submissions",
+      "Write unit and instrumentation tests for application logic"
+    ]
+  },
+  {
+    "aliases": ["API Developer", "Back-End Engineer", "Backend Engineer", "Server-Side Developer"],
+    "canonical": "Backend Developer",
+    "commonSkills": ["AWS", "Docker", "Microservices", "PostgreSQL", "Redis", "Unit Testing"],
+    "coreSkills": ["Git", "REST APIs", "SQL", "System Design"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Design and implement server-side services and APIs",
+      "Design database schemas and optimize queries for performance",
+      "Instrument services with logging, metrics and alerting",
+      "Integrate third-party services and internal systems",
+      "Participate in code review and technical design discussions",
+      "Write automated tests and maintain service reliability targets"
+    ]
+  },
+  {
+    "aliases": ["BA", "Business Systems Analyst", "Requirements Analyst"],
+    "canonical": "Business Analyst",
+    "commonSkills": [
+      "Data Analysis",
+      "Jira",
+      "Microsoft Excel",
+      "Process Improvement",
+      "Technical Writing"
+    ],
+    "coreSkills": ["Business Analysis", "Requirements Gathering", "SQL", "Stakeholder Management"],
+    "family": "product",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Analyze business processes and identify improvement opportunities",
+      "Document functional requirements and acceptance criteria",
+      "Elicit and document requirements from business stakeholders",
+      "Produce reports and dashboards that track process performance",
+      "Support user acceptance testing and release validation",
+      "Translate business needs into specifications for delivery teams"
+    ]
+  },
+  {
+    "aliases": [
+      "Cloud Infrastructure Engineer",
+      "Cloud Operations Engineer",
+      "Cloud Systems Engineer"
+    ],
+    "canonical": "Cloud Engineer",
+    "commonSkills": [
+      "CI/CD",
+      "Cloud Security",
+      "Docker",
+      "Kubernetes",
+      "Monitoring",
+      "Shell Scripting"
+    ],
+    "coreSkills": ["AWS", "Linux", "Networking", "Terraform"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Automate infrastructure provisioning with infrastructure-as-code tooling",
+      "Design and provision cloud infrastructure across compute, storage and networking",
+      "Implement cloud security controls, identity policies and network segmentation",
+      "Manage cost visibility and optimization across cloud accounts",
+      "Support migration of workloads from on-premise to cloud platforms",
+      "Troubleshoot infrastructure incidents and capacity issues"
+    ]
+  },
+  {
+    "aliases": ["Analytics Analyst", "Business Data Analyst", "Insights Analyst"],
+    "canonical": "Data Analyst",
+    "commonSkills": ["A/B Testing", "Looker", "Power BI", "Python", "Statistics", "Tableau"],
+    "coreSkills": ["Data Analysis", "Data Visualization", "Microsoft Excel", "SQL"],
+    "family": "data",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Build and maintain dashboards and recurring reporting",
+      "Define metrics and validate data quality for reported figures",
+      "Partner with business teams to frame analytical questions",
+      "Present findings and recommendations to non-technical stakeholders",
+      "Query and transform data from warehouses and operational systems",
+      "Support experiment design and readout of test results"
+    ]
+  },
+  {
+    "aliases": ["Big Data Engineer", "Data Infrastructure Engineer", "ETL Developer"],
+    "canonical": "Data Engineer",
+    "commonSkills": [
+      "Apache Airflow",
+      "Apache Kafka",
+      "Apache Spark",
+      "AWS",
+      "Data Modeling",
+      "dbt",
+      "Snowflake"
+    ],
+    "coreSkills": ["Data Pipelines", "ETL", "Python", "SQL"],
+    "family": "data",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Build and operate batch and streaming data pipelines",
+      "Design warehouse and lake schemas for analytical workloads",
+      "Implement data quality checks, testing and lineage tracking",
+      "Manage orchestration, scheduling and pipeline observability",
+      "Optimize storage formats, partitioning and query performance",
+      "Partner with analysts and scientists on data availability needs"
+    ]
+  },
+  {
+    "aliases": ["Applied Scientist", "Decision Scientist", "Quantitative Analyst"],
+    "canonical": "Data Scientist",
+    "commonSkills": [
+      "A/B Testing",
+      "Data Visualization",
+      "Feature Engineering",
+      "Jupyter",
+      "Pandas",
+      "scikit-learn"
+    ],
+    "coreSkills": ["Machine Learning", "Python", "SQL", "Statistics"],
+    "family": "data",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Communicate methodology, assumptions and limitations to stakeholders",
+      "Design and analyze experiments to evaluate product changes",
+      "Develop predictive and statistical models for business problems",
+      "Explore and prepare datasets for modeling and analysis",
+      "Partner with engineering to productionize models",
+      "Validate model performance and monitor for drift"
+    ]
+  },
+  {
+    "aliases": ["Database Engineer", "DBA"],
+    "canonical": "Database Administrator",
+    "commonSkills": [
+      "Database Migrations",
+      "Linux",
+      "Microsoft SQL Server",
+      "Monitoring",
+      "MySQL",
+      "Shell Scripting"
+    ],
+    "coreSkills": ["Database Design", "PostgreSQL", "Query Optimization", "SQL"],
+    "family": "data",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Administer database instances across environments",
+      "Implement backup, recovery and high-availability strategies",
+      "Manage schema changes and migration processes",
+      "Monitor database performance and tune slow queries",
+      "Plan capacity and storage growth",
+      "Support access control, auditing and compliance requirements"
+    ]
+  },
+  {
+    "aliases": ["Build Engineer", "Infrastructure Engineer", "Platform Engineer"],
+    "canonical": "DevOps Engineer",
+    "commonSkills": [
+      "AWS",
+      "Git",
+      "Kubernetes",
+      "Monitoring",
+      "Observability",
+      "Shell Scripting",
+      "Terraform"
+    ],
+    "coreSkills": ["CI/CD", "Docker", "Infrastructure as Code", "Linux"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Automate deployment and release processes",
+      "Build and maintain continuous integration and delivery pipelines",
+      "Define and maintain observability, alerting and on-call practices",
+      "Improve developer tooling and build performance",
+      "Manage container orchestration and service configuration",
+      "Own infrastructure automation and environment consistency"
+    ]
+  },
+  {
+    "aliases": ["Development Manager", "Software Engineering Manager", "Team Lead"],
+    "canonical": "Engineering Manager",
+    "commonSkills": [
+      "Agile Methodologies",
+      "Hiring",
+      "Mentoring",
+      "Performance Management",
+      "Stakeholder Management",
+      "System Design"
+    ],
+    "coreSkills": ["Communication", "Leadership", "People Management", "Project Management"],
+    "family": "management",
+    "seniorityLevels": ["mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Coach and grow engineers through feedback and career development",
+      "Hire, onboard and retain engineering talent",
+      "Manage delivery planning, prioritization and commitments",
+      "Own team health, process and technical quality standards",
+      "Partner with product and design on roadmap execution",
+      "Represent team progress and risks to wider stakeholders"
+    ]
+  },
+  {
+    "aliases": ["Front-End Engineer", "Frontend Engineer", "UI Developer", "Web Developer"],
+    "canonical": "Frontend Developer",
+    "commonSkills": [
+      "Git",
+      "Next.js",
+      "Responsive Design",
+      "Testing",
+      "TypeScript",
+      "Web Accessibility"
+    ],
+    "coreSkills": ["CSS", "HTML", "JavaScript", "React"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Build accessible, responsive user interfaces from design specifications",
+      "Collaborate with designers on component behavior and design system usage",
+      "Implement client-side state management and API integration",
+      "Improve page performance and core web vitals",
+      "Maintain component libraries and shared frontend infrastructure",
+      "Write unit and end-to-end tests for user-facing behavior"
+    ]
+  },
+  {
+    "aliases": ["Full-Stack Engineer", "Fullstack Developer", "Generalist Engineer"],
+    "canonical": "Full Stack Developer",
+    "commonSkills": ["AWS", "Docker", "Git", "PostgreSQL", "REST APIs", "Testing", "TypeScript"],
+    "coreSkills": ["JavaScript", "Node.js", "React", "SQL"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Build features end to end across client, server and database layers",
+      "Deploy and operate services in cloud environments",
+      "Design APIs and data models for new product capabilities",
+      "Maintain test coverage across frontend and backend code",
+      "Participate in architecture decisions and code review",
+      "Triage and resolve production issues across the stack"
+    ]
+  },
+  {
+    "aliases": ["iOS Engineer", "iOS Software Engineer", "Mobile Developer (iOS)"],
+    "canonical": "iOS Developer",
+    "commonSkills": ["Firebase", "Git", "Objective-C", "REST APIs", "Unit Testing"],
+    "coreSkills": ["iOS Development", "Swift", "SwiftUI", "UIKit"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Build and maintain iOS application features",
+      "Integrate backend APIs and manage local persistence",
+      "Manage App Store release processes and versioning",
+      "Optimize app performance, memory use and binary size",
+      "Uphold accessibility and platform interface guidelines",
+      "Write unit and UI tests for application behavior"
+    ]
+  },
+  {
+    "aliases": ["AI Engineer", "Applied Machine Learning Engineer", "ML Engineer"],
+    "canonical": "Machine Learning Engineer",
+    "commonSkills": [
+      "AWS",
+      "Data Pipelines",
+      "Docker",
+      "Feature Engineering",
+      "MLOps",
+      "scikit-learn",
+      "TensorFlow"
+    ],
+    "coreSkills": ["Machine Learning", "Model Deployment", "Python", "PyTorch"],
+    "family": "data",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Build training and evaluation pipelines for models",
+      "Collaborate with scientists to move research into production",
+      "Deploy models as services with versioning and rollback",
+      "Monitor model performance, drift and data quality in production",
+      "Optimize inference latency, throughput and cost",
+      "Own feature pipelines and reproducible experiment tracking"
+    ]
+  },
+  {
+    "aliases": ["Mobile Application Developer", "Mobile Engineer", "Mobile Software Engineer"],
+    "canonical": "Mobile Developer",
+    "commonSkills": [
+      "Android Development",
+      "Flutter",
+      "Git",
+      "iOS Development",
+      "TypeScript",
+      "Unit Testing"
+    ],
+    "coreSkills": ["JavaScript", "Mobile App Development", "React Native", "REST APIs"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Build cross-platform mobile features for iOS and Android",
+      "Diagnose and fix crashes reported from production devices",
+      "Handle offline behavior, caching and background sync",
+      "Integrate device capabilities and push notifications",
+      "Manage app releases and staged rollouts",
+      "Optimize app performance across device classes"
+    ]
+  },
+  {
+    "aliases": ["Digital Product Designer", "Experience Designer", "UI/UX Designer"],
+    "canonical": "Product Designer",
+    "commonSkills": [
+      "Design Systems",
+      "Interaction Design",
+      "Usability Testing",
+      "User Research",
+      "Web Accessibility",
+      "Wireframing"
+    ],
+    "coreSkills": ["Figma", "Prototyping", "UI Design", "UX Design"],
+    "family": "design",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Contribute to and maintain the shared design system",
+      "Design end-to-end flows from problem framing to final interface",
+      "Partner with engineers on implementation feasibility and handoff",
+      "Produce wireframes, prototypes and high-fidelity designs",
+      "Run usability sessions and incorporate findings into designs",
+      "Validate designs against accessibility standards"
+    ]
+  },
+  {
+    "aliases": ["Digital Product Manager", "PM", "Product Owner", "Technical Product Manager"],
+    "canonical": "Product Manager",
+    "commonSkills": [
+      "A/B Testing",
+      "Agile Methodologies",
+      "Data Analysis",
+      "Go-to-Market Strategy",
+      "Jira",
+      "User Research"
+    ],
+    "coreSkills": [
+      "Product Management",
+      "Product Strategy",
+      "Roadmapping",
+      "Stakeholder Management"
+    ],
+    "family": "product",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Coordinate launches with marketing, sales and support",
+      "Define product strategy and maintain the roadmap",
+      "Define success metrics and evaluate launched features",
+      "Prioritize the backlog and write clear requirements",
+      "Run discovery with users and stakeholders to validate problems",
+      "Work with engineering and design through delivery"
+    ]
+  },
+  {
+    "aliases": ["QA Automation Engineer", "Quality Assurance Engineer", "SDET", "Test Engineer"],
+    "canonical": "QA Engineer",
+    "commonSkills": [
+      "CI/CD",
+      "Cypress",
+      "Jira",
+      "Performance Testing",
+      "Playwright",
+      "Python",
+      "Selenium"
+    ],
+    "coreSkills": ["End-to-End Testing", "Manual Testing", "Quality Assurance", "Test Automation"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Build and maintain automated test suites",
+      "Define test strategy and coverage for new features",
+      "Integrate test execution into continuous integration pipelines",
+      "Perform exploratory and regression testing before releases",
+      "Report, triage and track defects to resolution",
+      "Validate performance and accessibility requirements"
+    ]
+  },
+  {
+    "aliases": ["Agile Coach", "Delivery Lead", "Iteration Manager"],
+    "canonical": "Scrum Master",
+    "commonSkills": [
+      "Backlog Management",
+      "Coaching",
+      "Jira",
+      "Process Improvement",
+      "Risk Management",
+      "Stakeholder Management"
+    ],
+    "coreSkills": ["Agile Methodologies", "Facilitation", "Kanban", "Scrum"],
+    "family": "product",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Coach teams on agile practices and continuous improvement",
+      "Facilitate sprint ceremonies and team rituals",
+      "Maintain delivery metrics and forecast completion",
+      "Protect focus by managing interruptions and scope changes",
+      "Remove impediments blocking delivery",
+      "Support cross-team dependency coordination"
+    ]
+  },
+  {
+    "aliases": [
+      "Application Security Engineer",
+      "Cybersecurity Engineer",
+      "Information Security Engineer"
+    ],
+    "canonical": "Security Engineer",
+    "commonSkills": [
+      "Cryptography",
+      "Identity and Access Management",
+      "Incident Response",
+      "Linux",
+      "OWASP",
+      "Penetration Testing",
+      "Secure Coding"
+    ],
+    "coreSkills": [
+      "Application Security",
+      "Cybersecurity",
+      "Threat Modeling",
+      "Vulnerability Management"
+    ],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Assess systems for vulnerabilities and drive remediation",
+      "Build security tooling and automate detection",
+      "Conduct threat modeling and secure design review",
+      "Investigate and respond to security incidents",
+      "Maintain identity, access and secrets management practices",
+      "Support compliance evidence and audit requirements"
+    ]
+  },
+  {
+    "aliases": ["Production Engineer", "Reliability Engineer", "SRE"],
+    "canonical": "Site Reliability Engineer",
+    "commonSkills": [
+      "CI/CD",
+      "Grafana",
+      "Incident Management",
+      "Load Balancing",
+      "Prometheus",
+      "Python",
+      "Terraform"
+    ],
+    "coreSkills": ["Kubernetes", "Linux", "Observability", "Site Reliability Engineering"],
+    "family": "engineering",
+    "seniorityLevels": ["mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Automate toil out of operational processes",
+      "Define and track service level objectives and error budgets",
+      "Improve system scalability, capacity and failure tolerance",
+      "Lead incident response and post-incident review",
+      "Own production monitoring, alerting and on-call rotation",
+      "Partner with product teams on reliability requirements"
+    ]
+  },
+  {
+    "aliases": ["Application Developer", "Developer", "Programmer", "Software Developer"],
+    "canonical": "Software Engineer",
+    "commonSkills": [
+      "Agile Methodologies",
+      "Docker",
+      "Java",
+      "JavaScript",
+      "Python",
+      "REST APIs",
+      "SQL"
+    ],
+    "coreSkills": ["Git", "Problem Solving", "System Design", "Unit Testing"],
+    "family": "engineering",
+    "seniorityLevels": ["entry", "mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Debug and resolve defects in existing systems",
+      "Design, build and maintain software components and services",
+      "Estimate work and deliver against agreed timelines",
+      "Participate in code review and uphold coding standards",
+      "Support production systems and respond to incidents",
+      "Write tests and technical documentation for delivered work"
+    ]
+  },
+  {
+    "aliases": ["Enterprise Architect", "Solution Architect", "Technical Architect"],
+    "canonical": "Solutions Architect",
+    "commonSkills": [
+      "Cloud Migration",
+      "Kubernetes",
+      "Microservices",
+      "Security Auditing",
+      "Stakeholder Management",
+      "Technical Writing"
+    ],
+    "coreSkills": ["AWS", "Cloud Architecture", "Distributed Systems", "System Design"],
+    "family": "engineering",
+    "seniorityLevels": ["senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Define reference architectures and technical standards",
+      "Design end-to-end technical solutions against business requirements",
+      "Evaluate technology options and document trade-offs",
+      "Guide delivery teams through implementation of the architecture",
+      "Lead architecture review and risk assessment",
+      "Support pre-sales and stakeholder technical discussions"
+    ]
+  },
+  {
+    "aliases": ["Program Manager", "Technical Project Manager", "TPM"],
+    "canonical": "Technical Program Manager",
+    "commonSkills": [
+      "Agile Methodologies",
+      "Budget Management",
+      "Communication",
+      "Jira",
+      "Roadmapping",
+      "System Design"
+    ],
+    "coreSkills": [
+      "Program Management",
+      "Project Management",
+      "Risk Management",
+      "Stakeholder Management"
+    ],
+    "family": "management",
+    "seniorityLevels": ["mid", "senior", "lead", "principal"],
+    "typicalResponsibilities": [
+      "Coordinate delivery across multiple engineering teams",
+      "Drive cross-functional programs from planning to launch",
+      "Identify, track and mitigate program risks and dependencies",
+      "Maintain program plans, milestones and status reporting",
+      "Run planning cycles and resource allocation discussions",
+      "Standardize delivery process across participating teams"
+    ]
+  },
+  {
+    "aliases": ["Interaction Designer", "User Experience Designer", "UX Researcher"],
+    "canonical": "UX Designer",
+    "commonSkills": [
+      "Design Systems",
+      "Design Thinking",
+      "Figma",
+      "Information Architecture",
+      "Prototyping",
+      "Web Accessibility"
+    ],
+    "coreSkills": ["Usability Testing", "User Research", "UX Design", "Wireframing"],
+    "family": "design",
+    "seniorityLevels": ["entry", "mid", "senior", "lead"],
+    "typicalResponsibilities": [
+      "Conduct user research and synthesize findings into insights",
+      "Define information architecture and navigation models",
+      "Design user flows, wireframes and interaction patterns",
+      "Measure experience outcomes after release",
+      "Partner with product and engineering on scope and feasibility",
+      "Test designs with users and iterate on feedback"
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+Corvin Blaszczyk-Ndlovu
+corvin.bn@examplemail.test | +61 466 118 220 | Brisbane, QLD
+linkedin.com/in/corvinblaszczyk
+
+
+PROFESSIONAL SUMMARY
+
+Java developer, Java engineer, Java architect with Java experience in Java Spring,
+Java Spring Boot, Java microservices, Java REST API, Java backend, Java full stack.
+AWS certified AWS developer with AWS Lambda, AWS EC2, AWS S3, AWS RDS, AWS
+CloudFormation, AWS DevOps, AWS cloud, AWS architecture experience. Kubernetes,
+Kubernetes Docker, Kubernetes cluster, Kubernetes deployment, Kubernetes Helm.
+
+
+TECHNICAL SKILLS
+
+Java, Java 8, Java 11, Java 17, Core Java, Advanced Java, J2EE, JEE, Spring, Spring
+Boot, Spring MVC, Spring Cloud, Spring Security, Spring Data, Hibernate, JPA, JDBC,
+Maven, Gradle, Ant, REST, RESTful, REST API, SOAP, Microservices, Micro services,
+Microservice architecture, AWS, Amazon Web Services, AWS Lambda, AWS EC2, AWS S3,
+AWS RDS, AWS SQS, AWS SNS, AWS EKS, AWS ECS, AWS IAM, AWS VPC, CloudFormation,
+Terraform, Docker, Dockerfile, Docker Compose, Kubernetes, K8s, Helm, OpenShift,
+Jenkins, CI/CD, CICD, Continuous Integration, Continuous Delivery, Git, GitHub,
+GitLab, Bitbucket, SVN, Jira, Confluence, Agile, Scrum, Kanban, SAFe, Waterfall,
+SQL, MySQL, PostgreSQL, Oracle, MongoDB, Cassandra, Redis, Elasticsearch, Kafka,
+RabbitMQ, ActiveMQ, JMS, Linux, Unix, Shell, Bash, Python, JavaScript, TypeScript,
+Angular, React, Node.js, HTML, CSS, Bootstrap, jQuery, JUnit, Mockito, TestNG,
+Selenium, Cucumber, SonarQube, Splunk, Datadog, New Relic, Grafana, Prometheus
+
+
+EXPERIENCE
+
+Senior Java Developer | Thornfield Storage Group | 2022 - Present
+
+- Worked on Java, Java Spring Boot, Java microservices development using Java Spring
+  Boot microservices with Java REST API and Java backend Java services.
+- Used AWS, AWS Lambda, AWS EC2, AWS S3 for AWS cloud deployment on AWS with AWS
+  CloudFormation and AWS DevOps practices on AWS.
+- Involved in Kubernetes and Docker containerisation using Kubernetes Docker
+  Kubernetes deployment Kubernetes Helm Kubernetes cluster management.
+- Responsible for CI/CD, CICD, Jenkins, Jenkins pipeline, Jenkins job, Jenkins build
+  for continuous integration and continuous delivery CI/CD Jenkins.
+- Worked with SQL, MySQL, PostgreSQL, Oracle database, database design, database
+  queries, database optimisation, database performance, database tuning.
+
+Java Developer | Vaneer & Croft Legal | 2019 - 2022
+
+- Developed Java applications using Java, Spring, Spring Boot, Hibernate, JPA, JDBC,
+  Maven, REST, RESTful, REST API, microservices, microservice architecture.
+- Handled Agile, Scrum, Kanban, sprint planning, daily standup, sprint retrospective,
+  backlog grooming, story points, user stories, acceptance criteria.
+- Worked on JUnit, Mockito, TestNG, unit testing, integration testing, regression
+  testing, automation testing, test cases, test plans, test coverage.
+
+Java Developer | Bramblewick Interactive | 2017 - 2019
+
+- Java, J2EE, Servlets, JSP, Struts, Spring, Hibernate, Oracle, SQL, PL/SQL, Unix,
+  Linux, Shell scripting, Maven, SVN, Jenkins, Eclipse, IntelliJ, Tomcat, WebLogic.
+
+
+EDUCATION
+
+Bachelor of Technology, Computer Science, Fernbrook Institute of Technology, 2016

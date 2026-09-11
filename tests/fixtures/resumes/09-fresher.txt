@@ -1,0 +1,65 @@
+Marisol Kaczmarek-Obiora
+Perth, WA
+marisol.ko@examplemail.test
++61 427 093 618
+github.com/marisol-ko
+
+
+EDUCATION
+
+Bachelor of Computer Science
+Fernbrook Institute of Technology, Perth, WA
+Feb 2022 - Nov 2025
+Major in software engineering. Final year capstone graded high distinction.
+
+
+INTERNSHIPS
+
+Software Engineering Intern
+Cobalt Systems, Perth, WA
+Nov 2024 - Feb 2025
+
+- Built an internal dashboard in React and TypeScript that replaced a spreadsheet
+  used by the support team to track escalations.
+- Added 60 unit tests to the notification service, raising module coverage from
+  34 percent to 82 percent.
+- Documented the local development setup, which cut onboarding time for the next
+  intern cohort from two days to one afternoon.
+
+Data Engineering Intern
+Northwind Analytics, Perth, WA
+Dec 2023 - Feb 2024
+
+- Wrote Python scripts to validate 9 incoming supplier feeds against an agreed
+  schema before load.
+- Assisted with the migration of reporting queries from a legacy database to
+  PostgreSQL.
+
+
+PROJECTS
+
+Quillfeather Reader
+A self-hosted RSS reader built with Next.js, TypeScript and PostgreSQL. Supports
+full text search across 12,000 archived articles and deploys from a single Docker
+image. Source on GitHub.
+
+Saltmarsh Tide Tracker
+A React Native application that plots tide predictions for 40 Western Australian
+beaches. Published to a test track with 130 installs during the trial.
+
+Bramblewick Chess Engine
+A chess engine written in Rust that reached a 1,650 rating on a public play server.
+Implements alpha-beta pruning and a transposition table.
+
+
+ACTIVITIES
+
+Committee member, Fernbrook Computing Society, 2024 - 2025
+Volunteer tutor, introductory programming workshops, 2023 - 2025
+
+
+SKILLS
+
+Languages: TypeScript, JavaScript, Python, Rust, SQL
+Frameworks: React, Next.js, React Native
+Tools: Git, Docker, PostgreSQL, Vitest

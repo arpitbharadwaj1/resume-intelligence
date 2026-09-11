@@ -1,0 +1,53 @@
+Sunil Marchetti-Obi
+Brisbane, QLD
+sunil.marchetti@examplemail.test
++61 431 662 407
+linkedin.com/in/sunilmarchetti
+
+
+SUMMARY
+
+Data engineer with four years of experience building batch and streaming pipelines
+for retail analytics teams.
+
+
+EXPERIENCE
+
+Data Engineer
+Saltmarsh Grain Co-operative, Brisbane, QLD
+Jul 2022 - Present
+
+- Built nightly ingestion pipelines in Python that consolidated 14 supplier feeds
+  into a single warehouse schema.
+- Wrote and tuned SQL transformations that cut the daily reporting refresh from
+  3 hours to 40 minutes.
+- Modelled the inventory fact tables in PostgreSQL and documented the grain of each
+  table for the analytics team.
+- Added data quality assertions to every Python pipeline stage, which caught 9 silent
+  schema drifts before they reached dashboards.
+- Partnered with category managers to agree definitions for the stock cover metric
+  used across the weekly trading pack.
+
+Junior Data Analyst
+Halcyon Pear Retail Group, Brisbane, QLD
+Feb 2021 - Jun 2022
+
+- Produced weekly trading reports in SQL for the merchandising team.
+- Automated a manual spreadsheet consolidation with Python, saving roughly 6 hours
+  of analyst time each week.
+- Investigated discrepancies between the PostgreSQL warehouse and the point of sale
+  extracts, resolving 23 open data tickets.
+- Supported the annual stocktake by preparing reconciliation queries.
+
+
+EDUCATION
+
+Bachelor of Data Science
+Kestrelmont University, Brisbane, QLD
+Feb 2017 - Nov 2020
+
+
+SKILLS
+
+Python, SQL, PostgreSQL, Apache Spark, Apache Airflow, Apache Kafka, dbt,
+Snowflake, Databricks, AWS, Terraform, Docker, Kubernetes, Tableau, Power BI

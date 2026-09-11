@@ -1,0 +1,1927 @@
+[
+  {
+    "aliases": [".NET Core", ".NET Framework", "ASP.NET", "ASP.NET Core", "Dotnet"],
+    "canonical": ".NET",
+    "category": "backend"
+  },
+  {
+    "aliases": ["AB Testing", "Split Testing"],
+    "canonical": "A/B Testing",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Flexibility"],
+    "canonical": "Adaptability",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Illustrator"],
+    "canonical": "Adobe Illustrator",
+    "category": "design"
+  },
+  {
+    "aliases": ["Photoshop"],
+    "canonical": "Adobe Photoshop",
+    "category": "design"
+  },
+  {
+    "aliases": ["XD"],
+    "canonical": "Adobe XD",
+    "category": "design"
+  },
+  {
+    "aliases": ["Agile", "Agile Development"],
+    "canonical": "Agile Methodologies",
+    "category": "product"
+  },
+  {
+    "aliases": ["EC2"],
+    "canonical": "Amazon EC2",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["ECS", "Elastic Container Service"],
+    "canonical": "Amazon ECS",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["EKS", "Elastic Kubernetes Service"],
+    "canonical": "Amazon EKS",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["RDS"],
+    "canonical": "Amazon RDS",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Redshift"],
+    "canonical": "Amazon Redshift",
+    "category": "data"
+  },
+  {
+    "aliases": ["S3", "Simple Storage Service"],
+    "canonical": "Amazon S3",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Amplitude",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Android", "Android App Development", "Android SDK"],
+    "canonical": "Android Development",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Jetpack", "Jetpack Libraries"],
+    "canonical": "Android Jetpack",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Angular 2+", "Angular JS", "AngularJS"],
+    "canonical": "Angular",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Anomaly Detection",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Ansible",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Airflow"],
+    "canonical": "Apache Airflow",
+    "category": "data"
+  },
+  {
+    "aliases": ["Cassandra"],
+    "canonical": "Apache Cassandra",
+    "category": "database"
+  },
+  {
+    "aliases": ["Flink"],
+    "canonical": "Apache Flink",
+    "category": "data"
+  },
+  {
+    "aliases": ["Hadoop", "HDFS", "MapReduce"],
+    "canonical": "Apache Hadoop",
+    "category": "data"
+  },
+  {
+    "aliases": ["Hive"],
+    "canonical": "Apache Hive",
+    "category": "data"
+  },
+  {
+    "aliases": ["Kafka"],
+    "canonical": "Apache Kafka",
+    "category": "data"
+  },
+  {
+    "aliases": ["PySpark", "Spark"],
+    "canonical": "Apache Spark",
+    "category": "data"
+  },
+  {
+    "aliases": ["Tomcat"],
+    "canonical": "Apache Tomcat",
+    "category": "backend"
+  },
+  {
+    "aliases": ["API Architecture", "API Development"],
+    "canonical": "API Design",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Appium",
+    "category": "testing"
+  },
+  {
+    "aliases": ["AppSec"],
+    "canonical": "Application Security",
+    "category": "security"
+  },
+  {
+    "aliases": ["Argo", "ArgoCD"],
+    "canonical": "Argo CD",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Astro.js"],
+    "canonical": "Astro",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Attention to Detail",
+    "category": "soft"
+  },
+  {
+    "aliases": ["AuthN", "User Authentication"],
+    "canonical": "Authentication",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Access Control", "AuthZ"],
+    "canonical": "Authorization",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Amazon Web Services"],
+    "canonical": "AWS",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["CloudFormation"],
+    "canonical": "AWS CloudFormation",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Lambda", "Lambda Functions"],
+    "canonical": "AWS Lambda",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Azure Pipelines", "VSTS"],
+    "canonical": "Azure DevOps",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Babel.js"],
+    "canonical": "Babel",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Backlog Grooming", "Backlog Refinement"],
+    "canonical": "Backlog Management",
+    "category": "product"
+  },
+  {
+    "aliases": ["BDD"],
+    "canonical": "Behavior-Driven Development",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Big Query", "Google BigQuery"],
+    "canonical": "BigQuery",
+    "category": "data"
+  },
+  {
+    "aliases": ["Bootstrap 5", "Twitter Bootstrap"],
+    "canonical": "Bootstrap",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Budget Planning", "Budgeting"],
+    "canonical": "Budget Management",
+    "category": "business"
+  },
+  {
+    "aliases": ["Business Process Analysis", "Requirements Elicitation"],
+    "canonical": "Business Analysis",
+    "category": "business"
+  },
+  {
+    "aliases": ["New Business Development"],
+    "canonical": "Business Development",
+    "category": "business"
+  },
+  {
+    "aliases": ["BI"],
+    "canonical": "Business Intelligence",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["C Programming"],
+    "canonical": "C",
+    "category": "language"
+  },
+  {
+    "aliases": ["C Sharp", "CSharp"],
+    "canonical": "C#",
+    "category": "language"
+  },
+  {
+    "aliases": ["C Plus Plus", "CPP"],
+    "canonical": "C++",
+    "category": "language"
+  },
+  {
+    "aliases": ["Caching Strategies"],
+    "canonical": "Caching",
+    "category": "backend"
+  },
+  {
+    "aliases": ["ChakraUI"],
+    "canonical": "Chakra UI",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Change Management",
+    "category": "business"
+  },
+  {
+    "aliases": ["Continuous Delivery", "Continuous Deployment", "Continuous Integration"],
+    "canonical": "CI/CD",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Circle CI"],
+    "canonical": "CircleCI",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Click House"],
+    "canonical": "ClickHouse",
+    "category": "database"
+  },
+  {
+    "aliases": [],
+    "canonical": "Clojure",
+    "category": "language"
+  },
+  {
+    "aliases": ["Cloud Design", "Cloud Solution Architecture"],
+    "canonical": "Cloud Architecture",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Cloud Cost Management", "FinOps"],
+    "canonical": "Cloud Cost Optimization",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Cloud Modernization"],
+    "canonical": "Cloud Migration",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Cloud Security Posture Management"],
+    "canonical": "Cloud Security",
+    "category": "security"
+  },
+  {
+    "aliases": ["Cloudflare Workers"],
+    "canonical": "Cloudflare",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Coaching",
+    "category": "soft"
+  },
+  {
+    "aliases": [],
+    "canonical": "Cohort Analysis",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Team Collaboration", "Teamwork"],
+    "canonical": "Collaboration",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Verbal Communication", "Written Communication"],
+    "canonical": "Communication",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Market Analysis"],
+    "canonical": "Competitive Analysis",
+    "category": "product"
+  },
+  {
+    "aliases": ["Image Recognition"],
+    "canonical": "Computer Vision",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Conflict Resolution",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Atlassian Confluence"],
+    "canonical": "Confluence",
+    "category": "product"
+  },
+  {
+    "aliases": ["Content Strategy"],
+    "canonical": "Content Marketing",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Creativity",
+    "category": "soft"
+  },
+  {
+    "aliases": [],
+    "canonical": "Critical Thinking",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Customer Relationship Management"],
+    "canonical": "CRM",
+    "category": "business"
+  },
+  {
+    "aliases": ["Cross Functional Teamwork", "Cross-Functional Leadership"],
+    "canonical": "Cross-Functional Collaboration",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Encryption"],
+    "canonical": "Cryptography",
+    "category": "security"
+  },
+  {
+    "aliases": ["Cascading Style Sheets", "CSS3"],
+    "canonical": "CSS",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Cucumber",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Customer Retention"],
+    "canonical": "Customer Success",
+    "category": "business"
+  },
+  {
+    "aliases": ["Customer Service", "Technical Support"],
+    "canonical": "Customer Support",
+    "category": "business"
+  },
+  {
+    "aliases": ["Information Security", "InfoSec", "Security Engineering"],
+    "canonical": "Cybersecurity",
+    "category": "security"
+  },
+  {
+    "aliases": ["Cypress.io"],
+    "canonical": "Cypress",
+    "category": "testing"
+  },
+  {
+    "aliases": ["D3", "Data Driven Documents"],
+    "canonical": "D3.js",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Dart",
+    "category": "language"
+  },
+  {
+    "aliases": ["Dashboard Design", "Dashboarding"],
+    "canonical": "Dashboard Development",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Data Analytics"],
+    "canonical": "Data Analysis",
+    "category": "analytics"
+  },
+  {
+    "aliases": [],
+    "canonical": "Data Governance",
+    "category": "data"
+  },
+  {
+    "aliases": ["Data Lakes", "Lakehouse"],
+    "canonical": "Data Lake",
+    "category": "data"
+  },
+  {
+    "aliases": ["Data Models", "Dimensional Modeling"],
+    "canonical": "Data Modeling",
+    "category": "data"
+  },
+  {
+    "aliases": ["Data Pipeline Development", "Pipeline Orchestration"],
+    "canonical": "Data Pipelines",
+    "category": "data"
+  },
+  {
+    "aliases": ["Data Validation"],
+    "canonical": "Data Quality",
+    "category": "data"
+  },
+  {
+    "aliases": [],
+    "canonical": "Data Science",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Data Viz"],
+    "canonical": "Data Visualization",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Data Warehouse", "DWH"],
+    "canonical": "Data Warehousing",
+    "category": "data"
+  },
+  {
+    "aliases": ["DB Design", "Schema Design"],
+    "canonical": "Database Design",
+    "category": "database"
+  },
+  {
+    "aliases": ["Schema Migrations"],
+    "canonical": "Database Migrations",
+    "category": "database"
+  },
+  {
+    "aliases": ["Data Bricks"],
+    "canonical": "Databricks",
+    "category": "data"
+  },
+  {
+    "aliases": ["Data Dog"],
+    "canonical": "Datadog",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Data Build Tool"],
+    "canonical": "dbt",
+    "category": "data"
+  },
+  {
+    "aliases": ["Decision-Making"],
+    "canonical": "Decision Making",
+    "category": "soft"
+  },
+  {
+    "aliases": ["DL", "Neural Networks"],
+    "canonical": "Deep Learning",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Software Design Patterns"],
+    "canonical": "Design Patterns",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Design System"],
+    "canonical": "Design Systems",
+    "category": "design"
+  },
+  {
+    "aliases": [],
+    "canonical": "Design Thinking",
+    "category": "design"
+  },
+  {
+    "aliases": ["Online Marketing"],
+    "canonical": "Digital Marketing",
+    "category": "business"
+  },
+  {
+    "aliases": ["Digital Ocean"],
+    "canonical": "DigitalOcean",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Distributed Systems",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Django",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Containerization", "Docker Compose"],
+    "canonical": "Docker",
+    "category": "devops"
+  },
+  {
+    "aliases": ["DDD"],
+    "canonical": "Domain-Driven Design",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Amazon DynamoDB", "Dynamo DB"],
+    "canonical": "DynamoDB",
+    "category": "database"
+  },
+  {
+    "aliases": ["Elastic Search"],
+    "canonical": "Elasticsearch",
+    "category": "database"
+  },
+  {
+    "aliases": [],
+    "canonical": "Elixir",
+    "category": "language"
+  },
+  {
+    "aliases": ["Elastic Stack", "ELK"],
+    "canonical": "ELK Stack",
+    "category": "devops"
+  },
+  {
+    "aliases": ["EQ"],
+    "canonical": "Emotional Intelligence",
+    "category": "soft"
+  },
+  {
+    "aliases": ["E2E Testing"],
+    "canonical": "End-to-End Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": [],
+    "canonical": "Erlang",
+    "category": "language"
+  },
+  {
+    "aliases": ["ES Lint"],
+    "canonical": "ESLint",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["ELT", "Extract Transform Load"],
+    "canonical": "ETL",
+    "category": "data"
+  },
+  {
+    "aliases": ["EDA", "Event Driven Architecture"],
+    "canonical": "Event-Driven Architecture",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Experiment Design"],
+    "canonical": "Experimentation",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Expo React Native"],
+    "canonical": "Expo",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Express", "ExpressJS"],
+    "canonical": "Express.js",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Meeting Facilitation", "Workshop Facilitation"],
+    "canonical": "Facilitation",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Fast API"],
+    "canonical": "FastAPI",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Feature Engineering",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Figma",
+    "category": "design"
+  },
+  {
+    "aliases": ["Financial Modeling", "Financial Reporting"],
+    "canonical": "Financial Analysis",
+    "category": "business"
+  },
+  {
+    "aliases": ["Firestore", "Google Firebase"],
+    "canonical": "Firebase",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Flask",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Flutter",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Demand Forecasting"],
+    "canonical": "Forecasting",
+    "category": "analytics"
+  },
+  {
+    "aliases": [],
+    "canonical": "Framer Motion",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["FP"],
+    "canonical": "Functional Programming",
+    "category": "language"
+  },
+  {
+    "aliases": ["Gatsby.js", "GatsbyJS"],
+    "canonical": "Gatsby",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Data Privacy", "GDPR Compliance"],
+    "canonical": "GDPR",
+    "category": "security"
+  },
+  {
+    "aliases": ["Gen AI", "GenAI"],
+    "canonical": "Generative AI",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Git Version Control", "Version Control"],
+    "canonical": "Git",
+    "category": "devops"
+  },
+  {
+    "aliases": ["GH Actions"],
+    "canonical": "GitHub Actions",
+    "category": "devops"
+  },
+  {
+    "aliases": ["GitLab CI/CD", "GitLab Pipelines"],
+    "canonical": "GitLab CI",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Go Lang", "Golang"],
+    "canonical": "Go",
+    "category": "language"
+  },
+  {
+    "aliases": ["Go To Market", "GTM"],
+    "canonical": "Go-to-Market Strategy",
+    "category": "product"
+  },
+  {
+    "aliases": ["GA4", "Google Analytics 4"],
+    "canonical": "Google Analytics",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["GCP", "Google Cloud"],
+    "canonical": "Google Cloud Platform",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Google Sheets",
+    "category": "analytics"
+  },
+  {
+    "aliases": [],
+    "canonical": "Grafana",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Apollo GraphQL", "Graph QL"],
+    "canonical": "GraphQL",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Groovy",
+    "category": "language"
+  },
+  {
+    "aliases": ["G RPC"],
+    "canonical": "gRPC",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Haskell",
+    "category": "language"
+  },
+  {
+    "aliases": ["Helm Charts"],
+    "canonical": "Helm",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Heroku",
+    "category": "cloud"
+  },
+  {
+    "aliases": [],
+    "canonical": "Hibernate",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Candidate Screening", "Interviewing"],
+    "canonical": "Hiring",
+    "category": "soft"
+  },
+  {
+    "aliases": ["HTML5", "HyperText Markup Language"],
+    "canonical": "HTML",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Hub Spot"],
+    "canonical": "HubSpot",
+    "category": "business"
+  },
+  {
+    "aliases": ["HuggingFace", "Transformers Library"],
+    "canonical": "Hugging Face",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Access Management", "IAM"],
+    "canonical": "Identity and Access Management",
+    "category": "security"
+  },
+  {
+    "aliases": ["On-Call", "On-Call Support"],
+    "canonical": "Incident Management",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Security Incident Response"],
+    "canonical": "Incident Response",
+    "category": "security"
+  },
+  {
+    "aliases": ["IA"],
+    "canonical": "Information Architecture",
+    "category": "design"
+  },
+  {
+    "aliases": ["IaC"],
+    "canonical": "Infrastructure as Code",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Integration Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": ["IxD"],
+    "canonical": "Interaction Design",
+    "category": "design"
+  },
+  {
+    "aliases": ["Ionic Framework"],
+    "canonical": "Ionic",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["iOS", "iOS App Development"],
+    "canonical": "iOS Development",
+    "category": "mobile"
+  },
+  {
+    "aliases": [],
+    "canonical": "Istio",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Core Java"],
+    "canonical": "Java",
+    "category": "language"
+  },
+  {
+    "aliases": ["ECMAScript", "ES6", "Java Script", "JS"],
+    "canonical": "JavaScript",
+    "category": "language"
+  },
+  {
+    "aliases": [],
+    "canonical": "Jenkins",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Jest",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Android Compose"],
+    "canonical": "Jetpack Compose",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Atlassian Jira"],
+    "canonical": "Jira",
+    "category": "product"
+  },
+  {
+    "aliases": ["J Query"],
+    "canonical": "jQuery",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Julia",
+    "category": "language"
+  },
+  {
+    "aliases": ["J Unit"],
+    "canonical": "JUnit",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Jupyter Notebook", "Jupyter Notebooks"],
+    "canonical": "Jupyter",
+    "category": "data"
+  },
+  {
+    "aliases": ["JSON Web Token", "JSON Web Tokens"],
+    "canonical": "JWT",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Kanban",
+    "category": "product"
+  },
+  {
+    "aliases": [],
+    "canonical": "Keras",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Kibana",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Kotlin",
+    "category": "language"
+  },
+  {
+    "aliases": ["KMP", "Kotlin Multiplatform Mobile"],
+    "canonical": "Kotlin Multiplatform",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["KPI Tracking", "Metrics Reporting"],
+    "canonical": "KPI Reporting",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Kube Flow"],
+    "canonical": "Kubeflow",
+    "category": "ml"
+  },
+  {
+    "aliases": ["K8s"],
+    "canonical": "Kubernetes",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Lang Chain"],
+    "canonical": "LangChain",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Laravel",
+    "category": "backend"
+  },
+  {
+    "aliases": ["LLM", "LLMs"],
+    "canonical": "Large Language Models",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Demand Generation"],
+    "canonical": "Lead Generation",
+    "category": "business"
+  },
+  {
+    "aliases": ["Team Leadership"],
+    "canonical": "Leadership",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Light GBM"],
+    "canonical": "LightGBM",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Linux Administration", "Ubuntu", "Unix"],
+    "canonical": "Linux",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Load Balancers"],
+    "canonical": "Load Balancing",
+    "category": "devops"
+  },
+  {
+    "aliases": ["k6", "Stress Testing"],
+    "canonical": "Load Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Centralized Logging", "Log Aggregation"],
+    "canonical": "Logging",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Looker Studio"],
+    "canonical": "Looker",
+    "category": "analytics"
+  },
+  {
+    "aliases": [],
+    "canonical": "Lua",
+    "category": "language"
+  },
+  {
+    "aliases": ["ML"],
+    "canonical": "Machine Learning",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Manual Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Maria DB"],
+    "canonical": "MariaDB",
+    "category": "database"
+  },
+  {
+    "aliases": ["Material-UI", "MUI"],
+    "canonical": "Material UI",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Mat Lab"],
+    "canonical": "MATLAB",
+    "category": "language"
+  },
+  {
+    "aliases": ["Mentorship"],
+    "canonical": "Mentoring",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Message Queue", "MQ"],
+    "canonical": "Message Queues",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Metabase",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Microfrontends"],
+    "canonical": "Micro Frontends",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Micro Services", "Microservice Architecture"],
+    "canonical": "Microservices",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Azure", "Azure Cloud"],
+    "canonical": "Microsoft Azure",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Advanced Excel", "Excel", "MS Excel"],
+    "canonical": "Microsoft Excel",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["MSSQL", "SQL Server", "T-SQL", "Transact-SQL"],
+    "canonical": "Microsoft SQL Server",
+    "category": "database"
+  },
+  {
+    "aliases": ["Mix Panel"],
+    "canonical": "Mixpanel",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["ML Flow"],
+    "canonical": "MLflow",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Machine Learning Operations", "ML Ops"],
+    "canonical": "MLOps",
+    "category": "ml"
+  },
+  {
+    "aliases": ["App Development", "Mobile Development"],
+    "canonical": "Mobile App Development",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Model Serving"],
+    "canonical": "Model Deployment",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Mongo", "Mongo DB"],
+    "canonical": "MongoDB",
+    "category": "database"
+  },
+  {
+    "aliases": ["Application Monitoring", "Infrastructure Monitoring"],
+    "canonical": "Monitoring",
+    "category": "devops"
+  },
+  {
+    "aliases": ["My SQL"],
+    "canonical": "MySQL",
+    "category": "database"
+  },
+  {
+    "aliases": ["NLP"],
+    "canonical": "Natural Language Processing",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Negotiation",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Neo4J Graph Database"],
+    "canonical": "Neo4j",
+    "category": "database"
+  },
+  {
+    "aliases": ["Nest JS", "Nest.js"],
+    "canonical": "NestJS",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Netlify",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Computer Networking", "DNS", "TCP/IP"],
+    "canonical": "Networking",
+    "category": "devops"
+  },
+  {
+    "aliases": ["NewRelic"],
+    "canonical": "New Relic",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Next JS", "NextJS"],
+    "canonical": "Next.js",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Nginx Web Server"],
+    "canonical": "Nginx",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "NLTK",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Node", "Node JS", "NodeJS"],
+    "canonical": "Node.js",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Num Py"],
+    "canonical": "NumPy",
+    "category": "data"
+  },
+  {
+    "aliases": ["Nuxt", "NuxtJS"],
+    "canonical": "Nuxt.js",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["OAuth 2.0", "OAuth2"],
+    "canonical": "OAuth",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Object Oriented Design", "OOD", "OOP"],
+    "canonical": "Object-Oriented Programming",
+    "category": "language"
+  },
+  {
+    "aliases": ["ObjC", "Objective C"],
+    "canonical": "Objective-C",
+    "category": "language"
+  },
+  {
+    "aliases": [],
+    "canonical": "Observability",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Objectives and Key Results", "OKR"],
+    "canonical": "OKRs",
+    "category": "product"
+  },
+  {
+    "aliases": ["OpenAPI Specification", "Swagger"],
+    "canonical": "OpenAPI",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Open CV"],
+    "canonical": "OpenCV",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Business Operations"],
+    "canonical": "Operations Management",
+    "category": "business"
+  },
+  {
+    "aliases": ["Oracle", "Oracle DB", "PL/SQL"],
+    "canonical": "Oracle Database",
+    "category": "database"
+  },
+  {
+    "aliases": ["OWASP Top 10"],
+    "canonical": "OWASP",
+    "category": "security"
+  },
+  {
+    "aliases": ["Accountability"],
+    "canonical": "Ownership",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Python Pandas"],
+    "canonical": "Pandas",
+    "category": "data"
+  },
+  {
+    "aliases": ["Ethical Hacking", "Pen Testing"],
+    "canonical": "Penetration Testing",
+    "category": "security"
+  },
+  {
+    "aliases": ["Staff Management", "Team Management"],
+    "canonical": "People Management",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Performance Reviews"],
+    "canonical": "Performance Management",
+    "category": "soft"
+  },
+  {
+    "aliases": ["JMeter"],
+    "canonical": "Performance Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": [],
+    "canonical": "Perl",
+    "category": "language"
+  },
+  {
+    "aliases": [],
+    "canonical": "PHP",
+    "category": "language"
+  },
+  {
+    "aliases": [],
+    "canonical": "Playwright",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Postgre SQL", "Postgres", "PSQL"],
+    "canonical": "PostgreSQL",
+    "category": "database"
+  },
+  {
+    "aliases": [],
+    "canonical": "Postman",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Microsoft Power BI", "PowerBI"],
+    "canonical": "Power BI",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Power Shell"],
+    "canonical": "PowerShell",
+    "category": "language"
+  },
+  {
+    "aliases": ["Presenting"],
+    "canonical": "Presentation Skills",
+    "category": "soft"
+  },
+  {
+    "aliases": [],
+    "canonical": "Prettier",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Prisma ORM"],
+    "canonical": "Prisma",
+    "category": "database"
+  },
+  {
+    "aliases": ["Analytical Thinking", "Problem-Solving"],
+    "canonical": "Problem Solving",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Continuous Improvement", "Process Optimization"],
+    "canonical": "Process Improvement",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Product Analytics",
+    "category": "product"
+  },
+  {
+    "aliases": ["Customer Discovery"],
+    "canonical": "Product Discovery",
+    "category": "product"
+  },
+  {
+    "aliases": ["Product Owner", "Product Ownership"],
+    "canonical": "Product Management",
+    "category": "product"
+  },
+  {
+    "aliases": [],
+    "canonical": "Product Strategy",
+    "category": "product"
+  },
+  {
+    "aliases": [],
+    "canonical": "Program Management",
+    "category": "product"
+  },
+  {
+    "aliases": ["PWA", "PWAs"],
+    "canonical": "Progressive Web Apps",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Project Delivery"],
+    "canonical": "Project Management",
+    "category": "product"
+  },
+  {
+    "aliases": [],
+    "canonical": "Prometheus",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Prompt Engineering",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Interactive Prototypes", "Rapid Prototyping"],
+    "canonical": "Prototyping",
+    "category": "design"
+  },
+  {
+    "aliases": [],
+    "canonical": "Public Speaking",
+    "category": "soft"
+  },
+  {
+    "aliases": [],
+    "canonical": "Pulumi",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Puppet",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Puppeteer",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Py Test"],
+    "canonical": "pytest",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Py", "Python 3", "Python3"],
+    "canonical": "Python",
+    "category": "language"
+  },
+  {
+    "aliases": ["Py Torch", "Torch"],
+    "canonical": "PyTorch",
+    "category": "ml"
+  },
+  {
+    "aliases": ["QA"],
+    "canonical": "Quality Assurance",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Database Tuning", "Query Tuning", "SQL Tuning"],
+    "canonical": "Query Optimization",
+    "category": "database"
+  },
+  {
+    "aliases": ["R Language", "R Programming"],
+    "canonical": "R",
+    "category": "language"
+  },
+  {
+    "aliases": ["Rabbit MQ"],
+    "canonical": "RabbitMQ",
+    "category": "backend"
+  },
+  {
+    "aliases": ["React.js", "ReactJS"],
+    "canonical": "React",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["ReactNative"],
+    "canonical": "React Native",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["TanStack Query"],
+    "canonical": "React Query",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["RTL", "Testing Library"],
+    "canonical": "React Testing Library",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Recommender Systems"],
+    "canonical": "Recommendation Systems",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Talent Acquisition", "Technical Recruiting"],
+    "canonical": "Recruiting",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Redis",
+    "category": "database"
+  },
+  {
+    "aliases": ["React Redux", "Redux Toolkit"],
+    "canonical": "Redux",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Regression Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Regex", "RegExp"],
+    "canonical": "Regular Expressions",
+    "category": "language"
+  },
+  {
+    "aliases": ["RL"],
+    "canonical": "Reinforcement Learning",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Remix.js"],
+    "canonical": "Remix",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Business Requirements", "Requirements Analysis"],
+    "canonical": "Requirements Gathering",
+    "category": "product"
+  },
+  {
+    "aliases": ["Mobile-First Design", "Responsive Web Design"],
+    "canonical": "Responsive Design",
+    "category": "design"
+  },
+  {
+    "aliases": ["REST", "REST API", "RESTful API", "RESTful APIs", "RESTful Services"],
+    "canonical": "REST APIs",
+    "category": "backend"
+  },
+  {
+    "aliases": ["RAG", "Retrieval Augmented Generation"],
+    "canonical": "Retrieval-Augmented Generation",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Risk Management",
+    "category": "product"
+  },
+  {
+    "aliases": ["Product Roadmap", "Roadmap Planning"],
+    "canonical": "Roadmapping",
+    "category": "product"
+  },
+  {
+    "aliases": [],
+    "canonical": "Ruby",
+    "category": "language"
+  },
+  {
+    "aliases": ["Rails", "RoR"],
+    "canonical": "Ruby on Rails",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Rust",
+    "category": "language"
+  },
+  {
+    "aliases": ["B2B Sales", "Sales Management"],
+    "canonical": "Sales",
+    "category": "business"
+  },
+  {
+    "aliases": ["Salesforce CRM"],
+    "canonical": "Salesforce",
+    "category": "business"
+  },
+  {
+    "aliases": ["Sass/SCSS", "SCSS"],
+    "canonical": "Sass",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Scala",
+    "category": "language"
+  },
+  {
+    "aliases": ["Scikit Learn", "Sklearn"],
+    "canonical": "scikit-learn",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Scrum Framework"],
+    "canonical": "Scrum",
+    "category": "product"
+  },
+  {
+    "aliases": ["Secure Code Review"],
+    "canonical": "Secure Coding",
+    "category": "security"
+  },
+  {
+    "aliases": ["Security Audits"],
+    "canonical": "Security Auditing",
+    "category": "security"
+  },
+  {
+    "aliases": ["Selenium WebDriver"],
+    "canonical": "Selenium",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Search Engine Optimization"],
+    "canonical": "SEO",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Sequelize",
+    "category": "database"
+  },
+  {
+    "aliases": ["SSR"],
+    "canonical": "Server-Side Rendering",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Serverless Architecture", "Serverless Framework"],
+    "canonical": "Serverless",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Service Mesh",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Bash", "Bash Scripting", "Shell", "Unix Shell", "Zsh"],
+    "canonical": "Shell Scripting",
+    "category": "language"
+  },
+  {
+    "aliases": ["Security Information and Event Management"],
+    "canonical": "SIEM",
+    "category": "security"
+  },
+  {
+    "aliases": ["SRE"],
+    "canonical": "Site Reliability Engineering",
+    "category": "devops"
+  },
+  {
+    "aliases": [],
+    "canonical": "Sketch",
+    "category": "design"
+  },
+  {
+    "aliases": [],
+    "canonical": "Snowflake",
+    "category": "data"
+  },
+  {
+    "aliases": ["SOC 2 Compliance", "SOC2"],
+    "canonical": "SOC 2",
+    "category": "security"
+  },
+  {
+    "aliases": ["Social Media Management"],
+    "canonical": "Social Media Marketing",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Solidity",
+    "category": "language"
+  },
+  {
+    "aliases": [],
+    "canonical": "spaCy",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Splunk",
+    "category": "devops"
+  },
+  {
+    "aliases": ["SpringBoot"],
+    "canonical": "Spring Boot",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Spring"],
+    "canonical": "Spring Framework",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Structured Query Language"],
+    "canonical": "SQL",
+    "category": "language"
+  },
+  {
+    "aliases": ["SQL Alchemy"],
+    "canonical": "SQLAlchemy",
+    "category": "database"
+  },
+  {
+    "aliases": ["SQL Lite"],
+    "canonical": "SQLite",
+    "category": "database"
+  },
+  {
+    "aliases": ["Stakeholder Engagement"],
+    "canonical": "Stakeholder Management",
+    "category": "product"
+  },
+  {
+    "aliases": ["Applied Statistics", "Statistical Analysis"],
+    "canonical": "Statistical Modeling",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Statistical Methods"],
+    "canonical": "Statistics",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Storybook.js"],
+    "canonical": "Storybook",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Strategic Planning"],
+    "canonical": "Strategic Thinking",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Real-Time Data Processing", "Streaming Data"],
+    "canonical": "Stream Processing",
+    "category": "data"
+  },
+  {
+    "aliases": ["Styled Components"],
+    "canonical": "styled-components",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Supabase",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Svelte.js"],
+    "canonical": "Svelte",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Svelte Kit"],
+    "canonical": "SvelteKit",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Swift",
+    "category": "language"
+  },
+  {
+    "aliases": ["Swift UI"],
+    "canonical": "SwiftUI",
+    "category": "mobile"
+  },
+  {
+    "aliases": ["Architecture Design", "Software Architecture", "Systems Design"],
+    "canonical": "System Design",
+    "category": "backend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Tableau",
+    "category": "analytics"
+  },
+  {
+    "aliases": ["Tailwind", "TailwindCSS"],
+    "canonical": "Tailwind CSS",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Documentation", "Technical Documentation"],
+    "canonical": "Technical Writing",
+    "category": "business"
+  },
+  {
+    "aliases": ["Tensor Flow"],
+    "canonical": "TensorFlow",
+    "category": "ml"
+  },
+  {
+    "aliases": ["HashiCorp Terraform"],
+    "canonical": "Terraform",
+    "category": "devops"
+  },
+  {
+    "aliases": ["Automated Testing", "QA Automation", "Test Automation Frameworks"],
+    "canonical": "Test Automation",
+    "category": "testing"
+  },
+  {
+    "aliases": ["TDD"],
+    "canonical": "Test-Driven Development",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Software Testing"],
+    "canonical": "Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": [],
+    "canonical": "Threat Modeling",
+    "category": "security"
+  },
+  {
+    "aliases": ["ThreeJS"],
+    "canonical": "Three.js",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Prioritization"],
+    "canonical": "Time Management",
+    "category": "soft"
+  },
+  {
+    "aliases": ["Time Series Forecasting"],
+    "canonical": "Time Series Analysis",
+    "category": "ml"
+  },
+  {
+    "aliases": ["Employee Training", "Training Delivery"],
+    "canonical": "Training and Development",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Trello",
+    "category": "product"
+  },
+  {
+    "aliases": ["Type ORM"],
+    "canonical": "TypeORM",
+    "category": "database"
+  },
+  {
+    "aliases": ["TS", "Type Script"],
+    "canonical": "TypeScript",
+    "category": "language"
+  },
+  {
+    "aliases": ["UI", "User Interface Design"],
+    "canonical": "UI Design",
+    "category": "design"
+  },
+  {
+    "aliases": ["UI Kit"],
+    "canonical": "UIKit",
+    "category": "mobile"
+  },
+  {
+    "aliases": [],
+    "canonical": "Unit Testing",
+    "category": "testing"
+  },
+  {
+    "aliases": ["User Testing"],
+    "canonical": "Usability Testing",
+    "category": "design"
+  },
+  {
+    "aliases": ["UX Research"],
+    "canonical": "User Research",
+    "category": "design"
+  },
+  {
+    "aliases": ["Story Writing", "User Story Mapping"],
+    "canonical": "User Stories",
+    "category": "product"
+  },
+  {
+    "aliases": ["User Experience Design", "UX"],
+    "canonical": "UX Design",
+    "category": "design"
+  },
+  {
+    "aliases": ["pgvector", "Pinecone", "Vector Search", "Weaviate"],
+    "canonical": "Vector Databases",
+    "category": "database"
+  },
+  {
+    "aliases": ["Supplier Management"],
+    "canonical": "Vendor Management",
+    "category": "business"
+  },
+  {
+    "aliases": [],
+    "canonical": "Vercel",
+    "category": "cloud"
+  },
+  {
+    "aliases": ["Graphic Design"],
+    "canonical": "Visual Design",
+    "category": "design"
+  },
+  {
+    "aliases": ["Vite.js"],
+    "canonical": "Vite",
+    "category": "frontend"
+  },
+  {
+    "aliases": [],
+    "canonical": "Vitest",
+    "category": "testing"
+  },
+  {
+    "aliases": ["Vue", "Vue 3", "VueJS"],
+    "canonical": "Vue.js",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Vulnerability Assessment"],
+    "canonical": "Vulnerability Management",
+    "category": "security"
+  },
+  {
+    "aliases": ["A11y", "Accessibility", "WCAG"],
+    "canonical": "Web Accessibility",
+    "category": "design"
+  },
+  {
+    "aliases": ["Custom Elements"],
+    "canonical": "Web Components",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Beautiful Soup", "BeautifulSoup", "Scrapy"],
+    "canonical": "Web Scraping",
+    "category": "data"
+  },
+  {
+    "aliases": [],
+    "canonical": "WebGL",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Web Pack"],
+    "canonical": "Webpack",
+    "category": "frontend"
+  },
+  {
+    "aliases": ["Socket.IO", "Web Sockets"],
+    "canonical": "WebSockets",
+    "category": "backend"
+  },
+  {
+    "aliases": ["Wireframes"],
+    "canonical": "Wireframing",
+    "category": "design"
+  },
+  {
+    "aliases": ["XG Boost"],
+    "canonical": "XGBoost",
+    "category": "ml"
+  },
+  {
+    "aliases": [],
+    "canonical": "Zustand",
+    "category": "frontend"
+  }
+]

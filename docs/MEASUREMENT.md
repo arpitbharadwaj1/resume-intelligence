@@ -301,6 +301,21 @@ Rules binding all four:
 - Resume text is untrusted data ([`AI.md`](AI.md) §5). Because these calls produce enum verdicts and never
   scores, a successful injection cannot move a score — it can at most flip one bullet's verdict.
 
+## 5a. Result precision
+
+Rubric results are clamped to `[0,1]` and then **rounded to 6 decimal places** at the single point where
+each rubric returns.
+
+This is not cosmetic. Weights that are exact in decimal are not exact in binary: a genuinely perfect
+category sums to `0.9999999999999999`, not `1`. Persisting that leaves floating-point dust in stored
+scores and in the version-to-version comparisons the product is built around — two identical resumes could
+differ in the sixteenth decimal place and an equality check would call it a change. Six places is far
+beyond what a 0–100 score can express, so it never alters a displayed number; it only makes stored scores
+exact at the precision they claim.
+
+`NaN` collapses to the category floor rather than propagating, so one malformed feature cannot void an
+entire analysis.
+
 ## 6. Stability budget — the CI gate
 
 The mechanism that keeps "reproducible" true as prompts and models change.

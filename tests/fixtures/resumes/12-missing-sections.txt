@@ -1,0 +1,42 @@
+Halvard Pemberton-Achebe
+halvard.pa@examplemail.test
++61 438 551 906
+
+
+EXPERIENCE
+
+Operations Analyst
+Saltmarsh Grain Co-operative
+May 2022 - Present
+
+- Rebuilt the weekly freight allocation model, which reduced empty running across
+  the contracted fleet by 17 percent.
+- Negotiated revised terms with two regional carriers, lowering the cost per pallet
+  movement by 9 percent without changing service levels.
+- Introduced a shared exceptions dashboard that cut the daily reconciliation meeting
+  from 45 minutes to 10 minutes.
+- Trained 12 depot coordinators on the new dispatch process and wrote the reference
+  guide still used at induction.
+- Investigated recurring delivery failures at three sites and closed the root cause
+  with a change to the booking window.
+
+Logistics Coordinator
+Harrowgate Freight Systems
+Feb 2020 - Apr 2022
+
+- Coordinated daily dispatch for 40 vehicles across two distribution centres.
+- Reduced late departures from 22 percent to 6 percent by resequencing the morning
+  load plan.
+- Maintained the carrier performance scorecard reported to the operations manager
+  each month.
+- Resolved customer delivery escalations and fed the outcomes back into the routing
+  rules.
+
+Warehouse Team Leader
+Thornfield Storage Group
+Jan 2018 - Jan 2020
+
+- Supervised a shift team of 9 across picking, packing and despatch.
+- Improved pick accuracy from 96.1 percent to 99.4 percent by introducing a
+  double-scan check at despatch.
+- Ran the quarterly stocktake and reduced the variance write-off by 24 percent.

@@ -1,0 +1,75 @@
+Fenella Drummond-Iyapo
+Hobart, TAS
+fenella.di@examplemail.test
++61 408 774 512
+linkedin.com/in/fenelladrummond
+github.com/fenella-di
+
+
+SUMMARY
+
+Junior developer with one year of commercial experience, following six years
+teaching secondary mathematics. Brings a practised habit of breaking complex
+problems down and explaining trade-offs to non-technical stakeholders.
+
+
+EXPERIENCE
+
+Junior Software Developer
+Wrackline Civic Software, Hobart, TAS
+Aug 2024 - Present
+
+- Implemented 14 React components for the permit application portal used by
+  council staff across 4 municipalities.
+- Fixed 38 defects in the existing TypeScript codebase, clearing the backlog that
+  had blocked the accessibility audit sign-off.
+- Wrote unit tests with Jest for the fee calculation module, raising its coverage
+  from 22 percent to 91 percent.
+- Automated the weekly data export that three officers had previously assembled by
+  hand, saving about 5 hours a week.
+- Paired with senior engineers on the Node.js API layer and took ownership of the
+  notification endpoints.
+
+Secondary Mathematics Teacher
+Ashgrove Vale Secondary College, Hobart, TAS
+Feb 2018 - Dec 2023
+
+- Taught mathematics and introductory computing to 5 classes of roughly 28 students
+  each across years 9 to 12.
+- Rebuilt the year 11 assessment programme, which lifted the cohort pass rate from
+  74 percent to 89 percent over two years.
+- Coordinated the faculty timetable and moderation process for 9 teaching staff.
+- Ran a lunchtime coding club that grew from 6 to 41 participants in its second year.
+- Introduced a spreadsheet-based progress tracker later adopted by the whole faculty.
+
+Mathematics Teacher
+Cinderhill Grammar, Launceston, TAS
+Feb 2017 - Dec 2017
+
+- Delivered the year 10 mathematics curriculum and supervised the numeracy support
+  programme.
+
+
+EDUCATION
+
+Certificate of Full Stack Web Development
+Tidewater Code Academy, Hobart, TAS
+Jan 2024 - Jul 2024
+
+Bachelor of Education, Mathematics
+Kestrelmont University, Hobart, TAS
+Feb 2013 - Nov 2016
+
+
+PROJECTS
+
+Tessellate Timetable - an open source timetabling helper written in TypeScript and
+React, used by two schools to draft their term schedules.
+
+
+SKILLS
+
+Languages: JavaScript, TypeScript, SQL
+Frameworks: React, Node.js, Express
+Testing: Jest, React Testing Library
+Other: Git, Figma, Curriculum design, Stakeholder communication

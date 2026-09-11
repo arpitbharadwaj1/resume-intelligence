@@ -1,0 +1,70 @@
+{
+  "id": "golden-01",
+  "description": "Mid-level frontend developer. Clean parse, sound structure, well-written bullets, weak quantified impact. This is the worked example in docs/MEASUREMENT.md section 9, and the resume text it describes is tests/fixtures/resumes/01-mid-frontend-weak-impact.txt.",
+  "notes": "Ratios are stored as exact fractions rather than the rounded values shown in the document, because that is what a real feature extractor produces. The document rounds for readability; the engine does not.",
+  "expected": {
+    "total": 83,
+    "categoryScores": {
+      "parseability": 0.9658,
+      "structure": 0.9667,
+      "skills": 0.757,
+      "experience": 0.8278,
+      "impact": 0.5139,
+      "formatting": 0.9025,
+      "contact": 1.0
+    }
+  },
+  "features": {
+    "parseability": {
+      "textYieldRatio": 0.92,
+      "readingOrderCoherence": 0.96,
+      "sectionsDetectedRatio": 1.0,
+      "contactFieldsExtracted": 1.0,
+      "glyphAnomalyRatio": 0.002,
+      "repeatedLineRatio": 0.0,
+      "isImageOnly": false
+    },
+    "structure": {
+      "hasExperience": true,
+      "hasSkills": true,
+      "hasEducation": true,
+      "hasSummary": true,
+      "summaryExpected": true,
+      "sectionOrderScore": 1.0,
+      "chronologyConsistent": true,
+      "datedEntryRatio": 0.6666666666666666
+    },
+    "skills": {
+      "totalSkills": 12,
+      "canonicalizedRatio": 0.92,
+      "skillGroupingPresent": true,
+      "keywordRepetitionIndex": 0.03,
+      "strongEvidenceRatio": 0.58
+    },
+    "experience": {
+      "bulletCompletenessRatio": 0.75,
+      "bulletsInLengthBand": 0.8888888888888888,
+      "firstPersonRatio": 0.0,
+      "bulletsPerRoleMedian": 6
+    },
+    "impact": {
+      "quantifiedBulletRatio": 0.3888888888888889,
+      "genuineOutcomeRatio": 0.7142857142857143,
+      "distinctMetricTypes": 3,
+      "metricsInRecentRole": true
+    },
+    "formatting": {
+      "dateFormatVariants": 2,
+      "punctuationConsistency": 0.94,
+      "headingCaseConsistency": 1.0,
+      "unusualGlyphRatio": 0.01,
+      "lineLengthOutlierRatio": 0.06
+    },
+    "contact": {
+      "hasName": true,
+      "hasEmail": true,
+      "hasPhone": true,
+      "optionalPresent": 2
+    }
+  }
+}

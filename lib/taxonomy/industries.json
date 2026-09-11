@@ -1,0 +1,122 @@
+[
+  {
+    "aliases": ["Adtech", "Advertising", "Marketing Services", "Martech"],
+    "canonical": "Advertising / Marketing"
+  },
+  {
+    "aliases": ["Aerospace", "Defence", "Defense"],
+    "canonical": "Aerospace / Defense"
+  },
+  {
+    "aliases": ["Agriculture", "AgTech", "Farming"],
+    "canonical": "Agriculture / AgTech"
+  },
+  {
+    "aliases": ["Auto Industry", "Automobile", "Car Industry"],
+    "canonical": "Automotive"
+  },
+  {
+    "aliases": ["Commercial Banking", "Investment Banking", "Retail Banking"],
+    "canonical": "Banking"
+  },
+  {
+    "aliases": ["Biotech", "Life Sciences"],
+    "canonical": "Biotechnology"
+  },
+  {
+    "aliases": ["Building and Construction", "ConTech"],
+    "canonical": "Construction"
+  },
+  {
+    "aliases": ["Consulting", "Management Consulting", "Professional Services"],
+    "canonical": "Consulting / Professional Services"
+  },
+  {
+    "aliases": ["Consumer Packaged Goods", "CPG", "FMCG"],
+    "canonical": "Consumer Goods"
+  },
+  {
+    "aliases": ["Information Security Industry", "Security Industry"],
+    "canonical": "Cybersecurity"
+  },
+  {
+    "aliases": ["Ecommerce", "Marketplace", "Online Retail"],
+    "canonical": "E-commerce"
+  },
+  {
+    "aliases": ["EdTech", "Education", "Higher Education"],
+    "canonical": "Education / EdTech"
+  },
+  {
+    "aliases": ["Energy", "Oil and Gas", "Renewables", "Utilities"],
+    "canonical": "Energy / Utilities"
+  },
+  {
+    "aliases": ["Finance", "Financial Services", "FinTech"],
+    "canonical": "Financial Services / FinTech"
+  },
+  {
+    "aliases": ["Game Development", "Interactive Entertainment", "Video Games"],
+    "canonical": "Gaming"
+  },
+  {
+    "aliases": ["Government", "GovTech", "Public Sector"],
+    "canonical": "Government / Public Sector"
+  },
+  {
+    "aliases": ["Health Care", "Health Services", "HealthTech"],
+    "canonical": "Healthcare"
+  },
+  {
+    "aliases": ["Hospitality", "Tourism", "Travel"],
+    "canonical": "Hospitality / Travel"
+  },
+  {
+    "aliases": ["Insurance", "InsurTech"],
+    "canonical": "Insurance / InsurTech"
+  },
+  {
+    "aliases": ["Law", "Legal Services", "LegalTech"],
+    "canonical": "Legal / LegalTech"
+  },
+  {
+    "aliases": ["Logistics", "Shipping", "Supply Chain"],
+    "canonical": "Logistics / Supply Chain"
+  },
+  {
+    "aliases": ["Industrial Manufacturing", "Production"],
+    "canonical": "Manufacturing"
+  },
+  {
+    "aliases": ["Broadcasting", "Entertainment", "Media", "Streaming"],
+    "canonical": "Media / Entertainment"
+  },
+  {
+    "aliases": ["Charity", "NGO", "Non Profit", "Nonprofit"],
+    "canonical": "Non-Profit / NGO"
+  },
+  {
+    "aliases": ["Drug Development", "Pharma"],
+    "canonical": "Pharmaceuticals"
+  },
+  {
+    "aliases": ["Property", "PropTech", "Real Estate"],
+    "canonical": "Real Estate / PropTech"
+  },
+  {
+    "aliases": ["Retail Trade", "Stores"],
+    "canonical": "Retail"
+  },
+  {
+    "aliases": ["SaaS", "Software", "Software Development Industry"],
+    "canonical": "Software / SaaS"
+  },
+  {
+    "aliases": ["Telco", "Telecom", "Telecommunication"],
+    "canonical": "Telecommunications"
+  },
+  {
+    "aliases": ["Mobility", "Transport", "Transportation"],
+    "canonical": "Transportation / Mobility"
+  }
+]

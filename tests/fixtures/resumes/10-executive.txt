@@ -1,0 +1,90 @@
+Aurelio Nakashima-Varga
+Sydney, NSW
+aurelio.nv@examplemail.test
++61 411 205 883
+linkedin.com/in/aurelionakashima
+
+
+EXECUTIVE SUMMARY
+
+Vice President of Engineering with 18 years in software organisations, the last
+nine leading engineering functions through growth, acquisition and turnaround.
+Builds engineering organisations that ship predictably and cost less per unit of
+delivery each year. Sits on the executive team and owns the technology plan,
+engineering budget and vendor strategy.
+
+
+EXPERIENCE
+
+Vice President of Engineering
+Cobalt Systems, Sydney, NSW
+Jun 2019 - Present
+
+- Grew the engineering organisation from 34 to 210 people across four countries
+  while holding voluntary attrition below 9 percent.
+- Restructured delivery into eight outcome-owning groups, which lifted on-time
+  release of committed roadmap items from 52 percent to 88 percent.
+- Reduced cost to serve per customer by 31 percent over three years through platform
+  consolidation and a renegotiated cloud commitment worth 4.2 million dollars.
+- Led the technical integration of two acquisitions, completing both migrations
+  inside the committed 12 month window with no customer-facing outage.
+- Established the engineering operating model, career framework and compensation
+  bands now used across the company.
+- Chaired the architecture council and set the build, buy and partner policy that
+  governs annual technology spend of 18 million dollars.
+
+Director of Engineering
+Northwind Analytics, Sydney, NSW
+Feb 2015 - May 2019
+
+- Built the platform function from scratch to 60 engineers and moved the company
+  from quarterly to weekly releases.
+- Took the enterprise product to its first regulated market, delivering the
+  compliance programme that unlocked 22 million dollars of pipeline.
+- Introduced service level objectives and an incident review practice that reduced
+  severity one incidents by 70 percent year on year.
+- Owned a 26 million dollar engineering budget and delivered three consecutive years
+  within 2 percent of plan.
+
+Head of Engineering
+Marrowbone Ledger Co, Melbourne, VIC
+Mar 2011 - Jan 2015
+
+- Managed 45 engineers across product and platform teams through a period of
+  doubling revenue.
+- Replaced an offshore vendor arrangement with an in-house team, improving delivery
+  predictability and saving 3.1 million dollars annually.
+- Partnered with the chief product officer to define the annual planning process
+  still in use today.
+
+Engineering Manager
+Harrowgate Freight Systems, Melbourne, VIC
+Jan 2008 - Feb 2011
+
+- Led two delivery teams building the carrier integration platform.
+- Introduced the first automated release pipeline in the company, taking deployment
+  from a monthly event to a weekly one.
+
+
+BOARD AND ADVISORY
+
+Non-executive advisor, Tidewater Code Academy, 2021 - Present
+Mentor, Kestrelmont University industry mentoring programme, 2019 - Present
+
+
+EDUCATION
+
+Master of Business Administration
+Kestrelmont University, Melbourne, VIC
+Feb 2013 - Nov 2015
+
+Bachelor of Engineering, Computer Systems
+Fernbrook Institute of Technology, Melbourne, VIC
+Feb 2003 - Nov 2006
+
+
+CORE COMPETENCIES
+
+Organisational design, Engineering strategy, Budget ownership, Mergers and
+acquisitions integration, Vendor negotiation, Executive stakeholder management,
+Talent development, Operating model design

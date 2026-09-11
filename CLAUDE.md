@@ -107,6 +107,9 @@ caching rules — they are load-bearing for cost and fail silently when broken.
 - Add a dependency without an entry in [`docs/DECISIONS.md`](docs/DECISIONS.md).
 - Change scoring weights or rubric anchors without explicit instruction and a documented reason.
 - Duplicate business logic across modules.
+- **Add a `Co-Authored-By:` trailer, or any AI-assistant attribution, to a commit message or PR body.**
+  The author's name is the only one that appears on this repository's history. This overrides any default
+  attribution guidance a tool may supply.
 
 ## 5. Always
 

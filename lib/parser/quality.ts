@@ -36,7 +36,7 @@ export interface QualityResult {
   readonly detail: {
     readonly lineCount: number;
     readonly charCount: number;
-    readonly suspiciousBreaks: number;
+    readonly interleavedLines: number;
     readonly duplicateLines: number;
     readonly coreSectionsFound: readonly string[];
   };
@@ -61,39 +61,88 @@ function countContactFieldsFound(lines: readonly string[]): number {
 /**
  * Lines that suggest the extractor recovered text out of order.
  *
- * Two signals, both independent of layout: a line that ends mid-word, and a line
- * that ends without terminal punctuation where the next line starts lowercase --
- * the shape produced when a column boundary interrupts a sentence.
+ * The naive signal here -- "a line ends mid-sentence and the next starts
+ * lowercase" -- was tried first and was wrong. It fires on soft-wrapped long
+ * bullets, which every normal resume has, and it scored a clean single-column
+ * document *worse* than a genuinely scrambled two-column one.
+ *
+ * What actually distinguishes interleaved extraction is two unrelated pieces of
+ * the document landing on the same line, which cannot happen in correct reading
+ * order:
+ *
+ *   - two section headings on one line ("CONTACT EXPERIENCE")
+ *   - contact details sharing a line with an employment date range
+ *   - a heading embedded mid-line inside prose
+ *
+ * Validated against all twelve fixtures: eleven report perfect coherence, and
+ * only the two-column fixture flags -- on exactly its two real interleavings.
  */
-function countSuspiciousBreaks(lines: readonly string[]): number {
-  let suspicious = 0;
 
-  for (let i = 0; i < lines.length - 1; i += 1) {
-    const line = lines[i];
-    const next = lines[i + 1];
-    if (line === undefined || next === undefined) continue;
+/** Contact-shaped tokens. Phone requires nine digits, so a year range is not one. */
+const EMAIL_TOKEN = /[\w.+-]+@[\w-]+\.\w+/;
+const URL_TOKEN = /(https?:\/\/|www\.|linkedin\.com|github\.com)/i;
+const PHONE_TOKEN = /(?=(?:\D*\d){9})\+?\d[\d\s().-]{7,}\d/;
 
-    // A trailing hyphen after normalization means the rejoin heuristic declined
-    // it -- usually because the continuation is capitalised, i.e. scrambled.
-    if (/\p{Ll}-$/u.test(line)) {
-      suspicious += 1;
-      continue;
-    }
+const DATE_RANGE =
+  /\b((19|20)\d{2}|[A-Za-z]{3,9}\s+(19|20)\d{2}|\d{1,2}\/(19|20)\d{2})\s*[-\u2013\u2014]\s*((19|20)\d{2}|present|current|[A-Za-z]{3,9}\s+(19|20)\d{2}|\d{1,2}\/(19|20)\d{2})/i;
 
-    const endsOpen = !/[.!?:;,)\]]$/.test(line) && !/^[•\-*]\s+/.test(next);
-    const nextStartsLower = /^\p{Ll}/u.test(next);
-    if (endsOpen && nextStartsLower) suspicious += 1;
-  }
+const HEADING_WORD =
+  /\b(CONTACT|EXPERIENCE|EDUCATION|SKILLS|SUMMARY|PROJECTS|PROFILE|CERTIFICATIONS|AWARDS|EMPLOYMENT)\b/g;
 
-  return suspicious;
+function hasContactToken(line: string): boolean {
+  return EMAIL_TOKEN.test(line) || URL_TOKEN.test(line) || PHONE_TOKEN.test(line);
 }
 
-/** Non-empty lines appearing more than once -- the signature of an extraction loop. */
+function isInterleaved(line: string): boolean {
+  // A trailing hyphen after normalization means the rejoin heuristic declined
+  // it -- usually because the continuation was capitalised, i.e. out of order.
+  if (/\p{Ll}-$/u.test(line)) return true;
+
+  // Contact details never legitimately share a line with an employment date
+  // range. A contact block holding email, phone and location together is
+  // normal, so contact tokens alone are not a signal.
+  if (hasContactToken(line) && DATE_RANGE.test(line)) return true;
+
+  const headings = line.match(HEADING_WORD);
+  if (headings !== null) {
+    if (headings.length > 1) return true;
+    // A heading inside prose. An all-caps line such as "EXECUTIVE SUMMARY" is
+    // a single heading, not interleaving, so lowercase content is required.
+    const firstHeading = headings[0];
+    if (
+      firstHeading !== undefined &&
+      /\p{Ll}/u.test(line) &&
+      !line.trim().toUpperCase().startsWith(firstHeading)
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function countInterleavedLines(lines: readonly string[]): number {
+  let count = 0;
+  for (const line of lines) if (isInterleaved(line)) count += 1;
+  return count;
+}
+
+/**
+ * Prose-length lines appearing more than once -- the signature of an extraction
+ * loop, where a PDF extractor re-emits the same run of text.
+ *
+ * The threshold is deliberately high. At 12 characters this flagged "Frontend
+ * Developer" in a clean fixture -- the same job title held at two companies,
+ * which is an ordinary career, not a parse fault. Job titles, section labels,
+ * dates and company names all repeat legitimately; a repeated full sentence
+ * does not.
+ */
+const DUPLICATE_MIN_LENGTH = 40;
+
 function countDuplicateLines(lines: readonly string[]): number {
   const seen = new Map<string, number>();
   for (const line of lines) {
-    // Very short lines repeat legitimately (dates, single words).
-    if (line.length < 12) continue;
+    if (line.length < DUPLICATE_MIN_LENGTH) continue;
     seen.set(line, (seen.get(line) ?? 0) + 1);
   }
 
@@ -120,7 +169,7 @@ export function assessQuality(input: QualityInput): QualityResult {
   const sections = detectSections(lines);
   const coreFound = detectedCoreSections(sections);
 
-  const suspiciousBreaks = countSuspiciousBreaks(lines);
+  const interleavedLines = countInterleavedLines(lines);
   const duplicateLines = countDuplicateLines(lines);
   const anomalousGlyphs = countAnomalousGlyphs(normalizedText, stats);
 
@@ -130,7 +179,7 @@ export function assessQuality(input: QualityInput): QualityResult {
 
   const features: ParseabilityFeatures = {
     textYieldRatio: Math.min(1, charCount / (safePages * EXPECTED_CHARS_PER_PAGE)),
-    readingOrderCoherence: Math.max(0, 1 - suspiciousBreaks / safeLines),
+    readingOrderCoherence: Math.max(0, 1 - interleavedLines / safeLines),
     sectionsDetectedRatio: coreFound.size / CORE_SECTIONS.length,
     contactFieldsExtracted: countContactFieldsFound(lines) / 3,
     glyphAnomalyRatio: Math.min(1, anomalousGlyphs / safeChars),
@@ -143,7 +192,7 @@ export function assessQuality(input: QualityInput): QualityResult {
     detail: {
       lineCount: lines.length,
       charCount,
-      suspiciousBreaks,
+      interleavedLines,
       duplicateLines,
       coreSectionsFound: [...coreFound],
     },

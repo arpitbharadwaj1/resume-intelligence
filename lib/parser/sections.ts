@@ -98,6 +98,14 @@ export function looksLikeHeading(line: string): boolean {
   // Contact lines carry an email, a phone number or a URL.
   if (/@|https?:\/\/|\d{3}[\s.-]?\d{3}/.test(trimmed)) return false;
 
+  // A label with content after it is content, not a heading. Skills sections are
+  // routinely written as "Languages: JavaScript, TypeScript" -- reading that as a
+  // section break steals the rest of the Skills section and reports Skills as
+  // missing from a resume that plainly has one. A heading may still END with a
+  // colon ("Skills:"), which is why only a colon with text after it disqualifies.
+  const colonIndex = trimmed.indexOf(":");
+  if (colonIndex !== -1 && trimmed.slice(colonIndex + 1).trim().length > 0) return false;
+
   const words = trimmed.split(/\s+/);
   if (words.length > 5) return false;
 

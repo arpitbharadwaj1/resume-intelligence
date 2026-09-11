@@ -1,0 +1,49 @@
+Dmitri Okonkwo-Salvatierra                 Backend Engineer
+CONTACT                                    EXPERIENCE
+dmitri.os@examplemail.test
++64 21 555 0134                            Backend Engineer
+Wellington, New Zealand                    Harrowgate Freight Systems
+linkedin.com/in/dmitriokonkwo              Feb 2021 - Present
+github.com/dmitri-os
+                                           - Designed the consignment pricing service in Go,
+SKILLS                                       which now handles 2.4 million quote requests a day
+                                             at a p99 of 85 milliseconds.
+Go
+PostgreSQL                                 - Replaced a nightly batch reconciliation job with an
+Kafka                                        event-driven pipeline on Kafka, reducing the
+Redis                                        settlement lag from 14 hours to under 9 minutes.
+Terraform
+Docker                                     - Migrated 46 tables off a shared PostgreSQL instance
+Kubernetes                                   into service-owned schemas with zero downtime,
+gRPC                                         which removed the last cross-team deploy lock.
+
+EDUCATION                                  - Introduced contract tests for every gRPC boundary,
+                                             dropping integration failures found in staging by
+Bachelor of Engineering                      61 percent over two quarters.
+Software Engineering
+Kestrelmont University                     Software Engineer
+Feb 2013 - Nov 2016                        Alderpost Data Works
+                                           Jan 2018 - Jan 2021
+CERTIFICATIONS
+                                           - Built the ingestion layer for a telemetry product
+Certified Kubernetes Administrator            taking 90 thousand events a second, using Redis
+Issued 2022                                   streams for buffering and backpressure.
+
+LANGUAGES                                  - Automated environment provisioning with Terraform,
+                                             cutting the time to stand up a review environment
+English                                      from three days to 25 minutes.
+Te Reo Maori (conversational)
+                                           - Rewrote the retry and idempotency handling around
+                                             payment callbacks, which eliminated the duplicate
+                                             charge class of incident entirely.
+
+                                           Junior Developer
+                                           Bramblewick Interactive
+                                           Mar 2017 - Dec 2017
+
+                                           - Delivered internal admin tooling in Go and Docker
+                                             that saved the support team roughly 11 hours a week
+                                             of manual record correction.
+
+                                           - Added structured logging across four services,
+                                             which cut the median incident triage time in half.

@@ -131,10 +131,10 @@ Implement one phase at a time; do not run ahead.
 
 | | Phase | Status |
 |---|---|---|
-| 0 | Repository & documentation | in progress |
-| 0.5 | `docs/MEASUREMENT.md` — the rubric gate | |
-| 1 | Application bootstrap | |
-| 2 | Database + RLS | |
+| 0 | Repository & documentation | ✅ |
+| 0.5 | `docs/MEASUREMENT.md` — the rubric gate | ✅ |
+| 1 | Application bootstrap | ✅ |
+| 2 | Database + RLS | next |
 | 3 | Authentication | |
 | 4 | Resume upload | |
 | 5 | Parser | |

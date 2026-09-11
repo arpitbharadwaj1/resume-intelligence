@@ -1,0 +1,76 @@
+Priya Venkatesan
+Sydney, NSW  |  priya.venkatesan@examplemail.test  |  +61 402 887 331
+linkedin.com/in/priyavenkatesan  |  github.com/priya-venkatesan
+
+
+SUMMARY
+
+Senior software engineer with eleven years building high-throughput payment and
+identity systems. Leads platform-wide migrations end to end, from design record
+through rollout, and measures every change against an agreed service objective.
+
+
+EXPERIENCE
+
+Staff Software Engineer
+Cobalt Systems, Sydney, NSW
+Mar 2021 - Present
+
+- Led the decomposition of a Java monolith into eight Kotlin services, reducing
+  median deploy lead time from 9 days to 4 hours across 23 engineers.
+- Designed an idempotent ledger write path in PostgreSQL that eliminated the
+  duplicate settlement defect class, previously 14 incidents a year, to zero.
+- Cut AWS spend by 340,000 dollars annually by right-sizing ECS task definitions
+  and moving cold ledger partitions to lower-cost storage.
+- Raised end-to-end test coverage of the payments path from 41 percent to 88 percent
+  and reduced the release regression rate by two thirds.
+- Introduced a tiered on-call rota and runbook standard, lowering the mean time to
+  restore from 78 minutes to 19 minutes over three quarters.
+- Mentored 6 engineers through promotion, three of whom now lead their own services.
+
+Senior Software Engineer
+Northwind Analytics, Sydney, NSW
+Jun 2017 - Feb 2021
+
+- Built a streaming aggregation layer in Kafka and Kotlin that served 1.2 billion
+  events a day with a 99.97 percent delivery guarantee.
+- Replaced a nightly Python reporting batch with incremental materialised views in
+  PostgreSQL, shortening report freshness from 26 hours to 12 minutes.
+- Rewrote the identity token service in Go, halving authentication latency at p99
+  and removing 4 recurring timeout alerts from the on-call rotation.
+- Codified infrastructure in Terraform across 19 accounts, which reduced environment
+  drift incidents from 11 a quarter to 1.
+- Established a load testing gate in CI that caught 7 latency regressions before
+  release during its first year in place.
+
+Software Engineer
+Marrowbone Ledger Co, Melbourne, VIC
+Aug 2014 - May 2017
+
+- Delivered a merchant onboarding API in Java that shortened average activation time
+  from 6 business days to 4 hours for 900 merchants.
+- Instrumented the transaction path with structured metrics, which reduced the median
+  incident triage time by 55 percent.
+- Automated reconciliation reporting in Python, saving the finance team an estimated
+  30 hours of manual work each month.
+- Hardened input validation across 12 public endpoints, closing every finding from the
+  external penetration test in a single release.
+
+
+EDUCATION
+
+Master of Computer Science
+Kestrelmont University, Melbourne, VIC
+Feb 2012 - Nov 2013
+
+Bachelor of Software Engineering
+Fernbrook Institute of Technology, Melbourne, VIC
+Feb 2008 - Nov 2011
+
+
+SKILLS
+
+Languages: Java, Kotlin, Go, Python, SQL
+Data and Messaging: PostgreSQL, Kafka, Redis
+Cloud and Infrastructure: AWS, Terraform, Docker, Kubernetes
+Practices: Distributed systems design, Observability, Load testing

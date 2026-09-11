@@ -184,3 +184,51 @@ Add to the §9 schema:
 - Provenance is what lets the score-history chart (§52) distinguish a genuinely improved resume from a
   drifted model. Without it, history is noise. The chart must render a discontinuity marker rather than a
   trend line across a `model_id` or `scoring_version` change.
+
+---
+
+## ADR-007 — Toolchain version pins
+
+**Date:** 2026-09-11 · **Status:** accepted, with one item to revisit
+
+### Pins
+
+| Package | Pinned | Latest available | Why |
+|---|---|---|---|
+| `next` | 16.3.4 | 16.3.4 | current |
+| `react` | 19.3.0 | 19.3.0 | current |
+| `typescript` | **5.9.3** | 7.0.2 | TS 7 is the native (Go) compiler rewrite. Pinning 5.9 avoids debugging ecosystem compatibility on a greenfield project; revisit once `eslint-config-next` and the Next plugin are known-good on 7 |
+| `vitest` | **4.1.11** | 5.0.0 | Vitest 5 requires Node `^22.12 \|\| ^24 \|\| >=26`. The development machine runs Node 20.20.2, so Vitest 5 cannot run here |
+| `eslint` | 9.39.5 | 10.10.0 | `eslint-config-next@16.3.4` is built against ESLint 9; ESLint 10 is untested with it |
+| `tailwindcss` | 4.3.3 | 4.3.3 | Tailwind 4 CSS-first config, via `@tailwindcss/postcss` |
+
+### Open item — Node 20 is past end of life
+
+Node 20 reached EOL in **April 2026**; the development machine runs 20.20.2. That means no further
+security patches, and it is what forces the Vitest 4 pin above.
+
+Not a blocker for local development. It **is** a blocker before deployment, and a portfolio project built
+on an EOL runtime is a poor look in the context this project exists for.
+
+Upgrading is small and self-contained: `nvm install 22 && nvm use 22`, change `.nvmrc` to `22`, raise the
+`engines.node` floor, and move `vitest` to `^5`. Deliberately not done unprompted, because it changes the
+machine's global toolchain rather than anything in this repository.
+
+### Rejected during setup
+
+- `create-next-app` — refuses to scaffold into a directory that already contains `README.md`, and would
+  not produce the strict-mode settings or the `no-restricted-imports` rule this project requires. Config
+  written by hand instead.
+- `@eslint/eslintrc` + `FlatCompat` — unnecessary. `eslint-config-next/core-web-vitals` already exports a
+  flat-config array (and already includes `next/typescript`). The compat shim also crashed on a circular
+  structure when serialising the React plugin.
+- `vite-tsconfig-paths` — Vite resolves tsconfig `paths` natively via `resolve.tsconfigPaths`.
+
+### Strictness beyond the spec's ask
+
+`tsconfig.json` enables `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride`,
+`noFallthroughCasesInSwitch`, `noUnusedLocals` and `noUnusedParameters` on top of `strict`.
+
+`exactOptionalPropertyTypes` immediately caught a real defect in `playwright.config.ts`, where
+`workers: undefined` was being passed to an optional property — an explicit `undefined` is not the same
+as an absent key. Fixed by conditional spread rather than by relaxing the setting.

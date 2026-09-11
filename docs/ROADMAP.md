@@ -9,10 +9,10 @@ Phase order is authoritative. Implement one phase at a time; do not run ahead. S
 
 | | Phase | Exit criterion | Status |
 |---|---|---|---|
-| 0 | Repository & documentation | Docs committed under personal identity, no `package.json` | **in progress** |
-| 0.5 | `docs/MEASUREMENT.md` | A reviewer can compute a score by hand and match the engine | |
-| 1 | Application bootstrap | `lint && typecheck && test` green on an empty app | |
-| 2 | Database + RLS | §44's four cross-user isolation tests pass | |
+| 0 | Repository & documentation | Docs committed under personal identity | ✅ done |
+| 0.5 | `docs/MEASUREMENT.md` | A reviewer can compute a score by hand and match the engine | ✅ done |
+| 1 | Application bootstrap | `lint && typecheck && test` green on an empty app | ✅ done |
+| 2 | Database + RLS | §44's four cross-user isolation tests pass | **next** |
 | 3 | Authentication | OAuth + magic link, protected dashboard | |
 | 4 | Resume upload | Full rejection matrix passes; no AI, no parsing | |
 | 5 | Parser | Parseability features emitted; two-column judged on quality | |

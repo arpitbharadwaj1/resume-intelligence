@@ -1,0 +1,75 @@
+Rhea Castellanos
+Melbourne, VIC
+rhea.castellanos@examplemail.test
++61 400 111 222
+linkedin.com/in/rheacastellanos
+
+
+SUMMARY
+
+Frontend developer with six years building accessible, component-driven web
+applications for logistics and education products. Comfortable owning a feature
+from design handover through release, and enjoys mentoring newer engineers on
+testing habits.
+
+
+EXPERIENCE
+
+Senior Frontend Developer
+Lumen Harbor Software, Melbourne, VIC
+Jan 2022 - Mar 2024
+
+- Rebuilt the shipment tracking dashboard in React and TypeScript, cutting median
+  time to interactive from 4.1 seconds to 1.6 seconds for warehouse dispatch users.
+- Introduced a shared component library adopted across the platform, reducing
+  duplicated interface code by 38 percent.
+- Led a team of 5 engineers through the migration of the customer portal to Next.js.
+- Partnered with the design system group to align spacing, typography and colour
+  tokens, which removed the long-running drift between design files and production.
+- Maintained the weekly release checklist and rota.
+- Facilitated fortnightly frontend guild sessions where engineers demonstrated new
+  patterns, reviewed proposals and agreed on conventions for the coming iteration,
+  covering topics from state management and form validation through to bundle
+  budgets, testing strategy and the handling of legacy pages still on the older stack.
+
+Frontend Developer
+Tessellate Labs, Melbourne, VIC
+03/2020 – 12/2021
+
+- Delivered a self-service reporting view in React that reduced support tickets about
+  export failures by 27 percent in the first quarter after release.
+- Built reusable form components with Redux for state handling across the onboarding
+  flow.
+- Cut the onboarding bundle size by 31 percent by code splitting routes and removing
+  unused date libraries.
+- Wrote unit and integration tests with Jest for the checkout and onboarding modules.
+- Reviewed pull requests and gave written feedback to newer contributors
+- Supported 3 product squads as the nominated frontend point of contact for interface
+  questions.
+
+Frontend Developer
+Quillfeather Digital, Remote
+
+- Shipped a Tailwind CSS based marketing site refresh that lifted the trial signup
+  completion rate from 4.2 percent to 6.1 percent.
+- Converted legacy jQuery widgets to JavaScript modules ahead of the framework
+  migration.
+- Implemented responsive CSS layouts for the pricing, careers and contact pages.
+- Documented the browser support policy and the fallback behaviour agreed with the
+  product team, which ended the recurring debate about legacy browsers in planning.
+- Coordinated with the content team on copy handover for each release.
+- Attended weekly stakeholder demos and captured follow-up actions.
+
+
+EDUCATION
+
+Bachelor of Information Technology
+Fernbrook Institute of Technology
+Feb 2015 - Nov 2018
+
+
+SKILLS
+
+Languages: JavaScript, TypeScript, HTML5, CSS3
+Frameworks and Libraries: React, Next.js, Redux, Tailwind CSS
+Testing and Tooling: Jest, Cypress, Webpack, Storybook

@@ -1,4 +1,4 @@
-# CLAUDE.md — ATS Resume Intelligence
+# CLAUDE.md — Resume Intelligence
 
 Read this before any implementation work. The full specification is
 [`ATS_Resume_Intelligence_ARCHITECTURE.md`](ATS_Resume_Intelligence_ARCHITECTURE.md) (archived source of

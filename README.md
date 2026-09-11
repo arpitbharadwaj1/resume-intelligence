@@ -1,10 +1,12 @@
-# ATS Resume Intelligence
+# Resume Intelligence
 
 A resume-intelligence platform that accepts PDF/DOCX resumes, normalizes them into structured data, and
 evaluates them against a transparent, versioned scoring methodology — with every finding backed by
 evidence drawn from the resume itself.
 
-Personal portfolio project. Currently in **Phase 0** (documentation); no application code yet.
+Personal portfolio project, built in phases. The scoring engine and its measurement layer are
+implemented and tested; parsing is in progress; upload, auth and the results UI are not yet built. See
+[`docs/ROADMAP.md`](docs/ROADMAP.md) for where each phase stands.
 
 ---
 

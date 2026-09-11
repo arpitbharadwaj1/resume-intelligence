@@ -232,3 +232,31 @@ machine's global toolchain rather than anything in this repository.
 `exactOptionalPropertyTypes` immediately caught a real defect in `playwright.config.ts`, where
 `workers: undefined` was being passed to an optional property — an explicit `undefined` is not the same
 as an absent key. Fixed by conditional spread rather than by relaxing the setting.
+
+---
+
+## ADR-008 — Repository named `resume-intelligence`, not `ats-resume-intelligence`
+
+**Date:** 2026-09-11 · **Status:** accepted
+
+### Decision
+
+The repository, package and product name drop the "ATS" prefix.
+
+### Why
+
+§1 and [`PRODUCT.md`](PRODUCT.md) §2 make it a governing rule that this product **never** claims to
+compute an employer-specific or universal ATS score. Leading the name with "ATS" advertises precisely the
+claim the product refuses to make — and the name is the first thing anyone reads, well before the
+disclaimer.
+
+The spec's own §1 calls "ATS Resume Intelligence" a *working name*, so this is a decision it invited
+rather than one it forbids.
+
+### Consequences
+
+The three user-facing score names (Resume Health, Role Readiness, Job Match) are unaffected — they were
+already the product. `ATS Parseability` remains a category name, which is accurate: it measures whether
+automated systems can read the document, and claims nothing about any particular system's scoring.
+
+The archived specification keeps its original filename as a historical record.

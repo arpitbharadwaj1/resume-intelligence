@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ATS Resume Intelligence",
+  title: "Resume Intelligence",
   description:
     "Understand what your resume is doing well, what is holding it back, and what to change — with the evidence behind every finding.",
 };

@@ -235,6 +235,43 @@ as an absent key. Fixed by conditional spread rather than by relaxing the settin
 
 ---
 
+## ADR-009 — Gemini Flash 2.0 replaces Anthropic for bounded classification
+
+**Date:** 2026-09-12 · **Status:** accepted · **Supersedes:** ADR-003 (Anthropic SDK)
+
+### Decision
+
+All bounded LLM classification calls (`statesContext`, `statesOutcome`, `genuineOutcomeRatio`, skill
+semantic evidence) use **Google Gemini Flash 2.0** via `@google/generative-ai`, obtained from Google
+AI Studio's free tier. `@anthropic-ai/sdk` is removed from the project.
+
+The `ResumeClassifier` interface in `lib/analysis/classifier.ts` is unchanged — the provider is an
+implementation detail behind that contract.
+
+### Why
+
+This is a personal portfolio project with no revenue and no company billing account. Anthropic's API
+is pay-as-you-go with no free tier. Gemini Flash 2.0 from Google AI Studio is:
+
+- **Free** — no credit card, no cost up to the AI Studio rate limits (15 RPM, 1M TPM as of 2026).
+- **Structured output** — native JSON mode with a response schema, which is exactly what R2 requires
+  (enum verdicts, never free-form). No output parsing fragility.
+- **Capable enough** — the three classification prompts ask binary yes/no/unclear questions per item.
+  A smaller, faster model is correct for this workload; Gemini Flash handles it comfortably.
+- **Swappable** — Groq (Llama 3, also free) can replace it by implementing the same interface.
+
+### Consequences
+
+- `ANTHROPIC_API_KEY` removed from env schema; `GEMINI_API_KEY` added.
+- `lib/ai/gemini.ts` implements `ResumeClassifier`. The existing fake classifier in tests is unaffected.
+- `docs/AI.md` model routing table updated to reflect Gemini Flash.
+- Prompt caching (ADR-003's main cost lever) is unavailable on Gemini's free tier. This is acceptable
+  because the AI calls are the cheapest part of the pipeline — rule features cover 50% of the score at
+  $0, and the three classification calls per resume are short. At the usage scale of a personal project,
+  rate limits are the binding constraint, not cost.
+
+---
+
 ## ADR-008 — Repository named `resume-intelligence`, not `ats-resume-intelligence`
 
 **Date:** 2026-09-11 · **Status:** accepted

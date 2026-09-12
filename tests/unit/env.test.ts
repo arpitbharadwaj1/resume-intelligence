@@ -6,7 +6,7 @@ const { clientSchema, serverSchema, parseOrThrow } = __testing;
 
 const validServerEnv = {
   SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
-  ANTHROPIC_API_KEY: "sk-ant-test",
+  GEMINI_API_KEY: "AIza-test",
 };
 
 describe("clientSchema", () => {
@@ -42,7 +42,7 @@ describe("serverSchema", () => {
 
     const missing = result.success ? [] : result.error.issues.map((i) => i.path.join("."));
     expect(missing).toContain("SUPABASE_SERVICE_ROLE_KEY");
-    expect(missing).toContain("ANTHROPIC_API_KEY");
+    expect(missing).toContain("GEMINI_API_KEY");
   });
 
   it("applies documented defaults for every limit", () => {
@@ -58,8 +58,7 @@ describe("serverSchema", () => {
 
   it("defaults model routing to the tiers documented in docs/AI.md", () => {
     const parsed = serverSchema.parse(validServerEnv);
-    expect(parsed.MODEL_EXTRACTION).toBe("claude-opus-5");
-    expect(parsed.MODEL_CLASSIFICATION).toBe("claude-haiku-4-5");
+    expect(parsed.MODEL_CLASSIFICATION).toBe("gemini-2.0-flash");
   });
 
   it("coerces numeric limits from strings, since every env var arrives as a string", () => {
@@ -102,7 +101,7 @@ describe("parseOrThrow", () => {
     }
 
     expect(message).toContain("SUPABASE_SERVICE_ROLE_KEY");
-    expect(message).toContain("ANTHROPIC_API_KEY");
+    expect(message).toContain("GEMINI_API_KEY");
     expect(message).toContain("MAX_AI_RETRIES");
     expect(message).toContain(".env.example");
   });
@@ -114,7 +113,7 @@ describe("parseOrThrow", () => {
     try {
       parseOrThrow(serverSchema, {
         SUPABASE_SERVICE_ROLE_KEY: secret,
-        ANTHROPIC_API_KEY: secret,
+        GEMINI_API_KEY: secret,
         RETENTION_DAYS: "not-a-number",
       });
     } catch (error) {
@@ -127,6 +126,6 @@ describe("parseOrThrow", () => {
 
   it("returns parsed data on success", () => {
     const parsed = parseOrThrow(serverSchema, validServerEnv);
-    expect(parsed.ANTHROPIC_API_KEY).toBe("sk-ant-test");
+    expect(parsed.GEMINI_API_KEY).toBe("AIza-test");
   });
 });

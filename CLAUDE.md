@@ -84,14 +84,14 @@ from a drifted model.
 ## 3. Stack
 
 Next.js App Router · React · TypeScript (strict) · Tailwind · shadcn/ui · Supabase (Postgres / Auth /
-Storage, hosted) · `@anthropic-ai/sdk` · Zod · Vitest · Playwright. Modular monolith — no microservices.
+Storage, hosted) · `@google/generative-ai` · Zod · Vitest · Playwright. Modular monolith — no microservices.
 
 Not a browser-only React SPA: server-side AI keys (§47), signed URLs, server-side upload validation and
 parsing (the client is untrusted input), and rate limiting all require a server.
 
-**Models:** `claude-opus-5` for extraction / JD parsing / recommendations; `claude-haiku-4-5` for bulk
-bounded classifications; `claude-sonnet-5` as escalation tier. See [`docs/AI.md`](docs/AI.md) for the
-caching rules — they are load-bearing for cost and fail silently when broken.
+**Models:** `gemini-2.0-flash` for all bounded classification calls (free tier, ADR-009). The
+`ResumeClassifier` interface abstracts the provider — Groq or Ollama can substitute by implementing
+the same interface. See [`docs/AI.md`](docs/AI.md) for routing and degradation rules.
 
 ---
 
@@ -147,3 +147,13 @@ Implement one phase at a time; do not run ahead.
 
 A phase is done when: code implemented, tests added, lint + typecheck + tests pass, error states handled,
 security implications reviewed, no raw resume data logged, docs updated, no unrelated changes (§95).
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

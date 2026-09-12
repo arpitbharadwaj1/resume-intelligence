@@ -5,79 +5,43 @@ Operational rules for `lib/ai/`. Spec background: §12 (extraction architecture)
 
 ---
 
-## 1. `lib/ai/client.ts` — what it is
+## 1. `lib/ai/gemini.ts` — the classifier client (ADR-009)
 
-A thin wrapper over `@anthropic-ai/sdk`. **Do not rebuild what the SDK already provides.**
+Implements `ResumeClassifier` via `@google/generative-ai` (Gemini Flash 2.0, Google AI Studio free
+tier). The client is stateless and shared across requests via `getClassifier()`.
 
-| Concern | Source |
-|---|---|
-| Retries | SDK `maxRetries` (default 2; retries 408/409/429/5xx + connection errors) |
-| Timeout | SDK `timeout` — **milliseconds in TypeScript**, unlike the Python SDK's seconds |
-| Typed errors | `Anthropic.RateLimitError` / `.BadRequestError` / `.APIError` — chain most-specific-first, never string-match messages |
-| Token counts | `response.usage` |
-| Request/response types | `Anthropic.MessageParam`, `.Message`, `.Tool` — do not define equivalents |
-
-Written by us:
-
-- **Input-size cap** via `client.messages.countTokens()` *before* sending. §48's `MAX_TEXT_LENGTH` is a
-  token budget, not `String.length`. Do not use tiktoken — it is the wrong tokenizer.
-- **Cost accounting** from a per-model rate table. `usage.input_tokens` is only the *uncached remainder*;
-  total prompt size is `input_tokens + cache_creation_input_tokens + cache_read_input_tokens`. Cache
-  reads bill ~0.1×, writes ~1.25×. Naive `input_tokens × rate` under-reports.
-- **§46-safe logging** — request ID, analysis ID, stage, duration, model, error category, token counts.
-  Never the prompt, never the resume, never the JD.
-- **Prompt version stamping** and the untrusted-input envelope.
+Key guarantees:
+- **Structured JSON output** — `responseMimeType: "application/json"` + `responseSchema` forces enum
+  verdicts at the API level. Zod validates afterward for business-rule rejections.
+- **§46-safe logging** — model, latency, token counts only. Never the prompt, never the resume.
+- **Prompt version stamping** — `PROMPT_VERSION` from `lib/ai/prompts.ts` is sent in every request
+  and persisted with the analysis (provenance, MEASUREMENT.md §7).
+- **Graceful degradation** — `analyzeFeatures` wraps each call; a network error falls back to rule
+  floors rather than failing the analysis.
 
 ## 2. Structured outputs
 
-Use `output_config: { format: {...} }` with `client.messages.parse()`, or `strict: true` on a tool
-definition (requires `additionalProperties: false` + `required` in the schema). The deprecated
-`output_format` parameter is not used.
+`generationConfig.responseMimeType = "application/json"` plus `responseSchema` — Gemini enforces the
+schema at generation time, so the model cannot return free text. Zod still runs afterward; it catches
+responses that passed the schema but violated business rules.
 
-Zod validation still runs afterward — it catches what the API honored but the business rules reject
-(an empty experience array, a date range that ends before it starts, a skill not in the taxonomy).
+## 3. Prompt caching
 
-## 3. Prompt caching — the cost lever §49 omits
-
-The system prompt plus the taxonomy files (`skills.json`, `skill-synonyms.json`, `action-verbs.json`) are
-byte-identical across every analysis. Place them in `system` behind one `cache_control` breakpoint and
-they bill at ~0.1×.
-
-**Caching is a prefix match — any byte change anywhere in the prefix invalidates everything after it.**
-Render order is `tools` → `system` → `messages`. Three rules follow, each of which fails *silently*:
-
-1. **Serialize taxonomy JSON with sorted keys.** Unsorted `JSON.stringify` over an object produces
-   different bytes per request. Nothing errors; the cache simply never hits.
-2. **Resume text goes after the breakpoint,** in the user turn. Never interpolate an analysis ID,
-   timestamp, UUID or user ID into the system prompt — each is a silent invalidator.
-3. **Do not fan out parallel requests sharing a prefix.** A cache entry is readable only once the first
-   response begins streaming; N concurrent requests all miss. This is why classifications are batched
-   into one call rather than one call per bullet.
-
-**Verify, and keep verifying.** A second identical request must show `cache_read_input_tokens > 0`.
-Assert this in an integration test — caching regressions are silent, usually introduced months later by
-an unrelated change to prompt assembly, and show up only as a larger bill.
-
-Minimum cacheable prefix is model-dependent and **not monotonic across generations**:
-`claude-opus-5` 512 tokens, `claude-sonnet-5` 1024, `claude-haiku-4-5` **4096**. A prefix that caches on
-Opus may silently not cache on Haiku.
+Not available on the Gemini free tier. Acceptable at personal-project scale — rule features cover 50%
+of the score at $0, and the three classification calls per resume are short. Rate limits (15 RPM) are
+the binding constraint, not cost. If the project scales, the `ResumeClassifier` interface can be
+re-implemented against a caching-capable provider with no changes to callers.
 
 ## 4. Model routing
 
 | Workload | Model | Why |
 |---|---|---|
-| Resume extraction, JD extraction, recommendations | `claude-opus-5` | Judgment-heavy, once per analysis |
-| Bulk bounded classifications (`statesContext?`, `statesOutcome?`) | `claude-haiku-4-5` | Binary verdicts at volume |
-| Escalation tier | `claude-sonnet-5` | Only if measurement shows Haiku insufficient |
+| Bounded classifications (`statesContext`, `statesOutcome`, outcome vs scope, skill evidence) | `gemini-2.0-flash` | Free tier, structured output, fast, sufficient for yes/no/unclear per item |
+| Escalation tier | `gemini-2.0-flash-exp` or Groq Llama 3 | If measurement shows Flash insufficient |
 
-Model IDs are exact strings — never append a date suffix.
-
-**Batch the classifications:** all bullets in one request returning an array of verdicts under a
-`strict: true` schema. Each array element is still a bounded per-item judgment, so measurement rule R2
-holds, but it costs 1–2 calls instead of 80.
-
-**The stability harness and eval runs go through the Message Batches API** — not latency-sensitive, 50%
-cost. Batch results arrive in arbitrary order: key by `custom_id`, never by position.
+All three classification call types are **batched**: all bullets in one request returning an array of
+verdicts. Each element is still a bounded per-item judgment (R2 holds), but it costs 1–3 calls per
+analysis rather than one per bullet.
 
 ## 5. Untrusted input (§13)
 

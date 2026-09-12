@@ -10,9 +10,9 @@
  * originates here.
  *
  * This file defines only the interface and the verdict→number mapping. The
- * implementation is an `@anthropic-ai/sdk` call that lives in `lib/ai/` and needs
- * a key; the extractors here depend on the interface, so they stay fully testable
- * with a deterministic fake and never import `lib/ai`. §5 also requires these to
+ * implementation is a Gemini API call (`lib/ai/gemini.ts`) that needs a key; the
+ * extractors here depend on the interface, so they stay fully testable with a
+ * deterministic fake and never import `lib/ai`. §5 also requires these to
  * be *batched* — one request returning an array of per-item verdicts, not one call
  * per bullet — which is why every method takes and returns a list.
  */

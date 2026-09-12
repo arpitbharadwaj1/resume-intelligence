@@ -43,11 +43,10 @@ const positiveInt = z.coerce.number().int().positive();
 
 const serverSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-  ANTHROPIC_API_KEY: z.string().min(1),
+  GEMINI_API_KEY: z.string().min(1),
 
-  // Model routing — see docs/AI.md section 4.
-  MODEL_EXTRACTION: z.string().min(1).default("claude-opus-5"),
-  MODEL_CLASSIFICATION: z.string().min(1).default("claude-haiku-4-5"),
+  // Model routing — see docs/AI.md section 4 and ADR-009.
+  MODEL_CLASSIFICATION: z.string().min(1).default("gemini-2.0-flash"),
 
   // Limits and cost protection (spec section 48). Configuration, never
   // hardcoded at call sites.
@@ -77,7 +76,7 @@ export function serverEnv(): ServerEnv {
   if (typeof window !== "undefined") {
     throw new Error(
       "serverEnv() was called in the browser. This module holds the Supabase " +
-        "service-role key and the Anthropic API key; reaching it from client " +
+        "service-role key and the Gemini API key; reaching it from client " +
         "code means a server-only import crossed into a client bundle.",
     );
   }

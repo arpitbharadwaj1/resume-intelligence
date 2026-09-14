@@ -12,19 +12,17 @@ export default function Home() {
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <Link
-          href="/results/preview"
+          href="/analyze/upload"
           className="inline-flex items-center justify-center rounded-lg bg-(--color-accent) px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+        >
+          Analyse my resume
+        </Link>
+        <Link
+          href="/results/preview"
+          className="inline-flex items-center justify-center rounded-lg border border-(--color-line) px-5 py-2.5 text-sm font-medium hover:bg-(--color-surface-raised)"
         >
           See a sample result
         </Link>
-      </div>
-
-      <div className="mt-10 rounded-lg border border-(--color-line) bg-(--color-surface-raised) p-5">
-        <p className="text-sm font-medium">In development</p>
-        <p className="mt-2 text-sm/6 text-(--color-ink-muted)">
-          Upload, authentication and AI analysis arrive in later phases. The sample result above
-          renders against a scored synthetic resume so the full results UI is already visible.
-        </p>
       </div>
 
       <p className="mt-10 text-xs/5 text-(--color-ink-muted)">

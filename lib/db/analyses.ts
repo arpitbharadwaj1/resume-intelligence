@@ -13,6 +13,7 @@ import { ANALYSIS_VERSION } from "@/lib/scoring/config";
 import { createServerClient, createAdminClient } from "@/lib/supabase/server";
 import type { FeatureVector, ScoreCategory } from "@/types/scoring";
 import type { RoleReadinessResult } from "@/types/role";
+import type { JobMatchResult } from "@/types/jd";
 
 export interface ResumeRecord {
   id: string;
@@ -68,6 +69,7 @@ export async function completeAnalysis(
   modelId: string,
   recommendations: Recommendation[] = [],
   roleReadiness?: RoleReadinessResult,
+  jobMatch?: JobMatchResult,
 ): Promise<void> {
   const admin = createAdminClient();
 
@@ -86,6 +88,12 @@ export async function completeAnalysis(
     update.role_context_json = roleReadiness.roleContext;
     update.role_readiness_score = roleReadiness.total;
     update.role_readiness_json = roleReadiness;
+  }
+
+  if (jobMatch) {
+    update.candidate_years = jobMatch.candidateYears;
+    update.job_match_score = jobMatch.total;
+    update.job_match_json = jobMatch;
   }
 
   // Update the analysis row with the final score and provenance.

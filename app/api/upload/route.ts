@@ -22,13 +22,16 @@ import { analyzeFeatures } from "@/lib/analysis";
 import { GeminiClassifier } from "@/lib/ai/gemini";
 import { generateRecommendations } from "@/lib/ai/recommendations";
 import { generateRoleExpectations } from "@/lib/ai/role-expectations";
+import { parseJobDescription } from "@/lib/ai/jd-parser";
 import { scoreResumeHealth } from "@/lib/scoring/health-score";
 import { scoreRoleReadiness } from "@/lib/scoring/role-readiness";
+import { scoreJobMatch } from "@/lib/scoring/job-match";
 import { createAdminClient, createServerClient } from "@/lib/supabase/server";
 import { extractDocument } from "@/lib/upload/extract";
 import { validateUpload } from "@/lib/upload/validate";
 import { serverEnv } from "@/lib/env";
 import type { RoleContext } from "@/types/role";
+import type { JobMatchResult } from "@/types/jd";
 
 export async function POST(request: NextRequest) {
   // --- Auth check ---
@@ -168,7 +171,24 @@ export async function POST(request: NextRequest) {
         });
     }
 
-    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION, recommendations, roleReadiness);
+    // Job Match — runs only when the user pasted a JD. Non-fatal.
+    let jobMatch: JobMatchResult | undefined;
+    const jdTextRaw = formData.get("jdText");
+    if (typeof jdTextRaw === "string" && jdTextRaw.trim().length > 50) {
+      const jdCandidateYearsRaw = formData.get("jdCandidateYears");
+      const candidateYears = typeof jdCandidateYearsRaw === "string"
+        ? Math.max(0, parseInt(jdCandidateYearsRaw, 10) || 0)
+        : 0;
+
+      jobMatch = await parseJobDescription(jdTextRaw.trim(), env.GEMINI_API_KEY)
+        .then((parsedJD) => scoreJobMatch(extraction.text, candidateYears, parsedJD))
+        .catch((err) => {
+          console.error("[upload] job-match error (non-fatal):", err);
+          return undefined;
+        });
+    }
+
+    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION, recommendations, roleReadiness, jobMatch);
   } catch (err) {
     console.error("[upload] analysis error:", err);
     await failAnalysis(analysisId, String(err));

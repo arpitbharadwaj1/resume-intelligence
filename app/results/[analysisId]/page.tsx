@@ -6,6 +6,7 @@ import { Findings } from "@/components/results/findings";
 import { PotentialScore } from "@/components/results/potential-score";
 import { Recommendations } from "@/components/results/recommendations";
 import { RoleReadinessCard } from "@/components/results/role-readiness-card";
+import { JobMatchCard } from "@/components/results/job-match-card";
 import { ScoreBreakdown } from "@/components/results/score-breakdown";
 import { ScoreRing } from "@/components/results/score-ring";
 import { getAnalysisResult } from "@/lib/db/get-result";
@@ -27,7 +28,7 @@ function tagline(score: number): string {
 async function loadResult(analysisId: string) {
   if (analysisId === "preview") {
     const features = goldenFixture.features as unknown as FeatureVector;
-    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null, recommendations: [], roleReadiness: null };
+    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null, recommendations: [], roleReadiness: null, jobMatch: null };
   }
   return getAnalysisResult(analysisId);
 }
@@ -41,7 +42,7 @@ export default async function ResultsPage({ params }: Props) {
   const data = await loadResult(analysisId);
   if (!data) notFound();
 
-  const { result, createdAt, recommendations, roleReadiness } = data;
+  const { result, createdAt, recommendations, roleReadiness, jobMatch } = data;
 
   return (
     <div className="min-h-screen bg-(--color-surface)">
@@ -94,8 +95,9 @@ export default async function ResultsPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Right column — role readiness + findings + recommendations */}
+          {/* Right column — job match + role readiness + findings + recommendations */}
           <div className="space-y-4">
+            {jobMatch && <JobMatchCard data={jobMatch} />}
             {roleReadiness && <RoleReadinessCard data={roleReadiness} />}
 
             <Findings categories={result.categories} />

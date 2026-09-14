@@ -28,6 +28,11 @@ export function UploadForm() {
   const [industry, setIndustry] = useState("");
   const [specialization, setSpecialization] = useState("");
 
+  // JD state
+  const [showJD, setShowJD] = useState(false);
+  const [jdText, setJdText] = useState("");
+  const [jdYears, setJdYears] = useState("");
+
   function pickFile(file: File | undefined) {
     if (!file) return;
     if (file.size > MAX_MB * 1024 * 1024) {
@@ -58,6 +63,11 @@ export function UploadForm() {
     const roleContext = buildRoleContext();
     if (roleContext) {
       form.append("roleContext", JSON.stringify(roleContext));
+    }
+
+    if (showJD && jdText.trim()) {
+      form.append("jdText", jdText.trim());
+      if (jdYears.trim()) form.append("jdCandidateYears", jdYears.trim());
     }
 
     let res: Response;
@@ -221,6 +231,55 @@ export function UploadForm() {
                   className="w-full rounded-lg border border-(--color-line) bg-(--color-surface-raised) px-3 py-2 text-sm placeholder:text-(--color-ink-muted)/50 focus:border-(--color-accent) focus:outline-none"
                 />
               </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* JD section */}
+      <div className="rounded-xl border border-(--color-line)">
+        <button
+          type="button"
+          onClick={() => setShowJD((v) => !v)}
+          disabled={isUploading}
+          className="flex w-full items-center justify-between px-4 py-3 text-sm font-medium hover:bg-(--color-surface-subtle) rounded-xl transition-colors"
+        >
+          <span>
+            Paste a job description{" "}
+            <span className="font-normal text-(--color-ink-muted)">(optional — enables Job Match score)</span>
+          </span>
+          {showJD ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
+        </button>
+
+        {showJD && (
+          <div className="border-t border-(--color-line) px-4 pb-4 pt-3 space-y-3">
+            <div>
+              <label className="block text-xs font-medium text-(--color-ink-muted) mb-1">
+                Job description text <span className="text-(--color-bad)">*</span>
+              </label>
+              <textarea
+                rows={8}
+                placeholder="Paste the full job description here…"
+                value={jdText}
+                onChange={(e) => setJdText(e.target.value)}
+                disabled={isUploading}
+                className="w-full rounded-lg border border-(--color-line) bg-(--color-surface-raised) px-3 py-2 text-sm placeholder:text-(--color-ink-muted)/50 focus:border-(--color-accent) focus:outline-none resize-none"
+              />
+            </div>
+            <div className="max-w-[200px]">
+              <label className="block text-xs font-medium text-(--color-ink-muted) mb-1">
+                Your years of experience <span className="text-(--color-bad)">*</span>
+              </label>
+              <input
+                type="number"
+                placeholder="e.g. 5"
+                min={0}
+                max={40}
+                value={jdYears}
+                onChange={(e) => setJdYears(e.target.value)}
+                disabled={isUploading}
+                className="w-full rounded-lg border border-(--color-line) bg-(--color-surface-raised) px-3 py-2 text-sm placeholder:text-(--color-ink-muted)/50 focus:border-(--color-accent) focus:outline-none"
+              />
             </div>
           </div>
         )}

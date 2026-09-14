@@ -11,6 +11,7 @@ import { createServerClient } from "@/lib/supabase/server";
 import { scoreResumeHealth } from "@/lib/scoring/health-score";
 import type { Recommendation } from "@/lib/ai/recommendations";
 import type { RoleReadinessResult } from "@/types/role";
+import type { JobMatchResult } from "@/types/jd";
 import type {
   ContactFeatures,
   ExperienceFeatures,
@@ -107,7 +108,7 @@ export async function getAnalysisResult(analysisId: string) {
 
   const { data: analysis } = await db
     .from("analyses")
-    .select("id, status, created_at, recommendations_json, role_readiness_json")
+    .select("id, status, created_at, recommendations_json, role_readiness_json, job_match_json")
     .eq("id", analysisId)
     .single();
 
@@ -124,6 +125,7 @@ export async function getAnalysisResult(analysisId: string) {
   const result = scoreResumeHealth(features);
   const recommendations = (analysis.recommendations_json ?? []) as Recommendation[];
   const roleReadiness = (analysis.role_readiness_json ?? null) as RoleReadinessResult | null;
+  const jobMatch = (analysis.job_match_json ?? null) as JobMatchResult | null;
 
-  return { result, analysisId, createdAt: analysis.created_at as string, recommendations, roleReadiness };
+  return { result, analysisId, createdAt: analysis.created_at as string, recommendations, roleReadiness, jobMatch };
 }

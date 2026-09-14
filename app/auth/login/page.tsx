@@ -17,7 +17,7 @@ export default async function LoginPage({ searchParams }: Props) {
   // Already signed in — send them where they were going.
   if (user) {
     const { next } = await searchParams;
-    redirect((next?.startsWith("/") ? next : "/dashboard") as Route);
+    redirect((next?.startsWith("/") ? next : "/analyze/upload") as Route);
   }
 
   const { error } = await searchParams;

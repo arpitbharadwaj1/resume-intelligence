@@ -30,6 +30,7 @@ export async function POST(request: NextRequest) {
   // --- Auth check ---
   const db = await createServerClient();
   const { data: { user } } = await db.auth.getUser();
+  console.log("[upload] user:", user?.id ?? "none");
   if (!user) {
     return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
   }
@@ -38,7 +39,8 @@ export async function POST(request: NextRequest) {
   let formData: FormData;
   try {
     formData = await request.formData();
-  } catch {
+  } catch (e) {
+    console.error("[upload] formData error:", e);
     return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
   }
 
@@ -47,6 +49,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
 
+  console.log("[upload] file:", file.name, file.size, file.type);
   const bytes = new Uint8Array(await file.arrayBuffer());
 
   // --- 1. Validate ---
@@ -65,7 +68,9 @@ export async function POST(request: NextRequest) {
   let extraction: Awaited<ReturnType<typeof extractDocument>>;
   try {
     extraction = await extractDocument(bytes, validation.extension);
-  } catch {
+    console.log("[upload] extracted chars:", extraction.text.length, "pages:", extraction.pageCount);
+  } catch (e) {
+    console.error("[upload] extraction error:", e);
     return NextResponse.json(
       { error: "Could not read the document. Please check the file is not corrupted." },
       { status: 422 },
@@ -75,13 +80,19 @@ export async function POST(request: NextRequest) {
   // --- 3. Upload original file to private Storage ---
   const storagePath = `${user.id}/${crypto.randomUUID()}-${file.name}`;
   const admin = createAdminClient();
+  // Buffer.from() copies the data — avoids the detached ArrayBuffer error that
+  // occurs when the Supabase storage client tries to slice the original buffer.
   const { error: storageError } = await admin.storage
     .from("resumes")
-    .upload(storagePath, bytes, { contentType: validation.mimeType, upsert: false });
+    .upload(storagePath, Buffer.from(bytes), { contentType: validation.mimeType, upsert: false });
 
   if (storageError) {
-    return NextResponse.json({ error: "File storage failed" }, { status: 500 });
+    // Safe to log — this is a Supabase error object, not resume content.
+    console.error("[upload] storage error:", storageError.message, storageError);
+    return NextResponse.json({ error: "File storage failed", detail: storageError.message }, { status: 500 });
   }
+
+  console.log("[upload] storage upload ok, path:", storagePath);
 
   // --- 4. Create DB records ---
   let resumeId: string;
@@ -95,9 +106,12 @@ export async function POST(request: NextRequest) {
       storagePath,
     });
     analysisId = await createAnalysis({ userId: user.id, resumeId });
-  } catch {
+  } catch (e) {
+    console.error("[upload] DB create error:", e);
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
+
+  console.log("[upload] DB rows created resumeId:", resumeId, "analysisId:", analysisId);
 
   // --- 5. Feature extraction + 6. Scoring + 7. Persist ---
   try {
@@ -110,8 +124,9 @@ export async function POST(request: NextRequest) {
 
     await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION);
   } catch (err) {
+    console.error("[upload] analysis error:", err);
     await failAnalysis(analysisId, String(err));
-    return NextResponse.json({ error: "Analysis failed" }, { status: 500 });
+    return NextResponse.json({ error: "Analysis failed", detail: String(err) }, { status: 500 });
   }
 
   // --- 8. Return ---

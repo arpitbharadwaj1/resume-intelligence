@@ -20,6 +20,7 @@ import type { NextRequest } from "next/server";
 import { completeAnalysis, createAnalysis, createResumeRecord, failAnalysis } from "@/lib/db/analyses";
 import { analyzeFeatures } from "@/lib/analysis";
 import { GeminiClassifier } from "@/lib/ai/gemini";
+import { generateRecommendations } from "@/lib/ai/recommendations";
 import { scoreResumeHealth } from "@/lib/scoring/health-score";
 import { createAdminClient, createServerClient } from "@/lib/supabase/server";
 import { extractDocument } from "@/lib/upload/extract";
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
   // --- Auth check ---
   const db = await createServerClient();
   const { data: { user } } = await db.auth.getUser();
-  console.log("[upload] user:", user?.id ?? "none");
+  console.warn("[upload] user:", user?.id ?? "none");
   if (!user) {
     return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
   }
@@ -49,7 +50,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
   }
 
-  console.log("[upload] file:", file.name, file.size, file.type);
+  console.warn("[upload] file:", file.name, file.size, file.type);
   const bytes = new Uint8Array(await file.arrayBuffer());
 
   // --- 1. Validate ---
@@ -68,7 +69,7 @@ export async function POST(request: NextRequest) {
   let extraction: Awaited<ReturnType<typeof extractDocument>>;
   try {
     extraction = await extractDocument(bytes, validation.extension);
-    console.log("[upload] extracted chars:", extraction.text.length, "pages:", extraction.pageCount);
+    console.warn("[upload] extracted chars:", extraction.text.length, "pages:", extraction.pageCount);
   } catch (e) {
     console.error("[upload] extraction error:", e);
     return NextResponse.json(
@@ -92,7 +93,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "File storage failed", detail: storageError.message }, { status: 500 });
   }
 
-  console.log("[upload] storage upload ok, path:", storagePath);
+  console.warn("[upload] storage upload ok, path:", storagePath);
 
   // --- 4. Create DB records ---
   let resumeId: string;
@@ -111,7 +112,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 
-  console.log("[upload] DB rows created resumeId:", resumeId, "analysisId:", analysisId);
+  console.warn("[upload] DB rows created resumeId:", resumeId, "analysisId:", analysisId);
 
   // --- 5. Feature extraction + 6. Scoring + 7. Persist ---
   try {
@@ -122,7 +123,17 @@ export async function POST(request: NextRequest) {
     });
     const result = scoreResumeHealth(features);
 
-    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION);
+    const recommendations = await generateRecommendations(
+      extraction.text,
+      features,
+      result,
+      env.GEMINI_API_KEY,
+    ).catch((err) => {
+      console.error("[upload] recommendations error (non-fatal):", err);
+      return [];
+    });
+
+    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION, recommendations);
   } catch (err) {
     console.error("[upload] analysis error:", err);
     await failAnalysis(analysisId, String(err));

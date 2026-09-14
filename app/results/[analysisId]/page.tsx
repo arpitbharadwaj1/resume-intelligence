@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { Findings } from "@/components/results/findings";
 import { PotentialScore } from "@/components/results/potential-score";
+import { Recommendations } from "@/components/results/recommendations";
 import { ScoreBreakdown } from "@/components/results/score-breakdown";
 import { ScoreHero } from "@/components/results/score-hero";
 import { getAnalysisResult } from "@/lib/db/get-result";
@@ -17,12 +18,10 @@ import goldenFixture from "@/tests/fixtures/golden/01-mid-frontend-weak-impact.j
 // ---------------------------------------------------------------------------
 
 async function loadResult(analysisId: string) {
-  // "preview" always renders the golden fixture — no DB needed, safe for demos.
   if (analysisId === "preview") {
     const features = goldenFixture.features as unknown as FeatureVector;
-    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null };
+    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null, recommendations: [] };
   }
-
   return getAnalysisResult(analysisId);
 }
 
@@ -40,7 +39,7 @@ export default async function ResultsPage({ params }: Props) {
 
   if (!data) notFound();
 
-  const { result, createdAt } = data;
+  const { result, createdAt, recommendations } = data;
 
   return (
     <main className="mx-auto max-w-xl px-4 py-12">
@@ -57,6 +56,12 @@ export default async function ResultsPage({ params }: Props) {
       <div className="mt-4">
         <Findings categories={result.categories} />
       </div>
+
+      {recommendations.length > 0 && (
+        <div className="mt-4">
+          <Recommendations recommendations={recommendations} />
+        </div>
+      )}
 
       <p className="mt-10 text-center text-xs text-(--color-ink-muted)">
         {analysisId !== "preview" && (

@@ -7,6 +7,7 @@
  * analysis belongs to the authenticated user.
  */
 import type { HealthScoreResult } from "@/types/scoring";
+import type { Recommendation } from "@/lib/ai/recommendations";
 import { PROMPT_VERSION } from "@/lib/ai/prompts";
 import { ANALYSIS_VERSION } from "@/lib/scoring/config";
 import { createServerClient, createAdminClient } from "@/lib/supabase/server";
@@ -64,6 +65,7 @@ export async function completeAnalysis(
   result: HealthScoreResult,
   features: FeatureVector,
   modelId: string,
+  recommendations: Recommendation[] = [],
 ): Promise<void> {
   const admin = createAdminClient();
 
@@ -78,6 +80,7 @@ export async function completeAnalysis(
       model_id: modelId,
       parser_version: ANALYSIS_VERSION,
       completed_at: new Date().toISOString(),
+      recommendations_json: recommendations,
     })
     .eq("id", analysisId);
 

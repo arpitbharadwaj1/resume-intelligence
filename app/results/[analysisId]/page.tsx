@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Findings } from "@/components/results/findings";
 import { PotentialScore } from "@/components/results/potential-score";
 import { Recommendations } from "@/components/results/recommendations";
+import { RoleReadinessCard } from "@/components/results/role-readiness-card";
 import { ScoreBreakdown } from "@/components/results/score-breakdown";
 import { ScoreRing } from "@/components/results/score-ring";
 import { getAnalysisResult } from "@/lib/db/get-result";
@@ -26,7 +27,7 @@ function tagline(score: number): string {
 async function loadResult(analysisId: string) {
   if (analysisId === "preview") {
     const features = goldenFixture.features as unknown as FeatureVector;
-    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null, recommendations: [] };
+    return { result: scoreResumeHealth(features), analysisId: "preview", createdAt: null, recommendations: [], roleReadiness: null };
   }
   return getAnalysisResult(analysisId);
 }
@@ -40,7 +41,7 @@ export default async function ResultsPage({ params }: Props) {
   const data = await loadResult(analysisId);
   if (!data) notFound();
 
-  const { result, createdAt, recommendations } = data;
+  const { result, createdAt, recommendations, roleReadiness } = data;
 
   return (
     <div className="min-h-screen bg-(--color-surface)">
@@ -93,8 +94,10 @@ export default async function ResultsPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Right column — findings + recommendations */}
+          {/* Right column — role readiness + findings + recommendations */}
           <div className="space-y-4">
+            {roleReadiness && <RoleReadinessCard data={roleReadiness} />}
+
             <Findings categories={result.categories} />
 
             {recommendations.length > 0 && (

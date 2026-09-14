@@ -10,6 +10,7 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { scoreResumeHealth } from "@/lib/scoring/health-score";
 import type { Recommendation } from "@/lib/ai/recommendations";
+import type { RoleReadinessResult } from "@/types/role";
 import type {
   ContactFeatures,
   ExperienceFeatures,
@@ -106,7 +107,7 @@ export async function getAnalysisResult(analysisId: string) {
 
   const { data: analysis } = await db
     .from("analyses")
-    .select("id, status, created_at, recommendations_json")
+    .select("id, status, created_at, recommendations_json, role_readiness_json")
     .eq("id", analysisId)
     .single();
 
@@ -122,6 +123,7 @@ export async function getAnalysisResult(analysisId: string) {
   const features = toVector(featureRows);
   const result = scoreResumeHealth(features);
   const recommendations = (analysis.recommendations_json ?? []) as Recommendation[];
+  const roleReadiness = (analysis.role_readiness_json ?? null) as RoleReadinessResult | null;
 
-  return { result, analysisId, createdAt: analysis.created_at as string, recommendations };
+  return { result, analysisId, createdAt: analysis.created_at as string, recommendations, roleReadiness };
 }

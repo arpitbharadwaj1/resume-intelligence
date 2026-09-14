@@ -12,6 +12,7 @@ import { PROMPT_VERSION } from "@/lib/ai/prompts";
 import { ANALYSIS_VERSION } from "@/lib/scoring/config";
 import { createServerClient, createAdminClient } from "@/lib/supabase/server";
 import type { FeatureVector, ScoreCategory } from "@/types/scoring";
+import type { RoleReadinessResult } from "@/types/role";
 
 export interface ResumeRecord {
   id: string;
@@ -66,22 +67,31 @@ export async function completeAnalysis(
   features: FeatureVector,
   modelId: string,
   recommendations: Recommendation[] = [],
+  roleReadiness?: RoleReadinessResult,
 ): Promise<void> {
   const admin = createAdminClient();
+
+  const update: Record<string, unknown> = {
+    status: "completed",
+    total_score: result.total,
+    scoring_version: result.scoringVersion,
+    prompt_version: PROMPT_VERSION,
+    model_id: modelId,
+    parser_version: ANALYSIS_VERSION,
+    completed_at: new Date().toISOString(),
+    recommendations_json: recommendations,
+  };
+
+  if (roleReadiness) {
+    update.role_context_json = roleReadiness.roleContext;
+    update.role_readiness_score = roleReadiness.total;
+    update.role_readiness_json = roleReadiness;
+  }
 
   // Update the analysis row with the final score and provenance.
   const { error: updateError } = await admin
     .from("analyses")
-    .update({
-      status: "completed",
-      total_score: result.total,
-      scoring_version: result.scoringVersion,
-      prompt_version: PROMPT_VERSION,
-      model_id: modelId,
-      parser_version: ANALYSIS_VERSION,
-      completed_at: new Date().toISOString(),
-      recommendations_json: recommendations,
-    })
+    .update(update)
     .eq("id", analysisId);
 
   if (updateError) throw new Error(`Failed to update analysis: ${updateError.message}`);

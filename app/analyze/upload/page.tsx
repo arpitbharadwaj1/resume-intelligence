@@ -23,12 +23,12 @@ export default function UploadPage() {
       {/* What you'll get */}
       <div className="mt-8 grid grid-cols-3 gap-4 text-center text-sm">
         {[
-          { label: "ATS Parseability", sub: "Can systems read it?" },
-          { label: "Evidence-backed", sub: "Every finding cited" },
-          { label: "Improvement plan", sub: "Specific actions" },
-        ].map(({ label, sub }) => (
-          <div key={label} className="rounded-xl border border-(--color-line) p-4">
-            <p className="font-medium">{label}</p>
+          { label: "ATS Parseability", sub: "Can systems read it?", bg: "bg-(--color-accent-subtle)", fg: "text-(--color-accent)" },
+          { label: "Evidence-backed", sub: "Every finding cited", bg: "bg-(--color-good-subtle)", fg: "text-(--color-good)" },
+          { label: "Improvement plan", sub: "Specific actions", bg: "bg-(--color-warn-subtle)", fg: "text-(--color-warn)" },
+        ].map(({ label, sub, bg, fg }) => (
+          <div key={label} className={`rounded-xl p-4 ${bg}`}>
+            <p className={`font-semibold ${fg}`}>{label}</p>
             <p className="mt-1 text-(--color-ink-muted)">{sub}</p>
           </div>
         ))}

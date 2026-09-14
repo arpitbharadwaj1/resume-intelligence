@@ -21,11 +21,14 @@ import { completeAnalysis, createAnalysis, createResumeRecord, failAnalysis } fr
 import { analyzeFeatures } from "@/lib/analysis";
 import { GeminiClassifier } from "@/lib/ai/gemini";
 import { generateRecommendations } from "@/lib/ai/recommendations";
+import { generateRoleExpectations } from "@/lib/ai/role-expectations";
 import { scoreResumeHealth } from "@/lib/scoring/health-score";
+import { scoreRoleReadiness } from "@/lib/scoring/role-readiness";
 import { createAdminClient, createServerClient } from "@/lib/supabase/server";
 import { extractDocument } from "@/lib/upload/extract";
 import { validateUpload } from "@/lib/upload/validate";
 import { serverEnv } from "@/lib/env";
+import type { RoleContext } from "@/types/role";
 
 export async function POST(request: NextRequest) {
   // --- Auth check ---
@@ -48,6 +51,26 @@ export async function POST(request: NextRequest) {
   const file = formData.get("file");
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "No file provided" }, { status: 400 });
+  }
+
+  // Parse optional role context — invalid JSON is silently ignored so the
+  // health analysis still runs without it.
+  let roleContext: RoleContext | undefined;
+  const roleContextRaw = formData.get("roleContext");
+  if (typeof roleContextRaw === "string") {
+    try {
+      const parsed = JSON.parse(roleContextRaw) as Record<string, unknown>;
+      if (typeof parsed.jobTitle === "string" && typeof parsed.experienceYears === "number") {
+        roleContext = {
+          jobTitle: parsed.jobTitle,
+          experienceYears: parsed.experienceYears,
+          ...(typeof parsed.industry === "string" ? { industry: parsed.industry } : {}),
+          ...(typeof parsed.specialization === "string" ? { specialization: parsed.specialization } : {}),
+        };
+      }
+    } catch {
+      // malformed JSON — proceed without role context
+    }
   }
 
   console.warn("[upload] file:", file.name, file.size, file.type);
@@ -133,7 +156,19 @@ export async function POST(request: NextRequest) {
       return [];
     });
 
-    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION, recommendations);
+    // Role Readiness — runs only when the user provided a target role.
+    // Non-fatal: a failed AI call for expectations doesn't invalidate the health score.
+    let roleReadiness = undefined;
+    if (roleContext) {
+      roleReadiness = await generateRoleExpectations(roleContext, env.GEMINI_API_KEY)
+        .then((expectations) => scoreRoleReadiness(extraction.text, roleContext!, expectations))
+        .catch((err) => {
+          console.error("[upload] role-readiness error (non-fatal):", err);
+          return undefined;
+        });
+    }
+
+    await completeAnalysis(analysisId, result, features, env.MODEL_CLASSIFICATION, recommendations, roleReadiness);
   } catch (err) {
     console.error("[upload] analysis error:", err);
     await failAnalysis(analysisId, String(err));

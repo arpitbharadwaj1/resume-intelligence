@@ -6,16 +6,22 @@ const FEATURES = [
     icon: Zap,
     title: "Instant analysis",
     desc: "Upload your resume and get a scored breakdown in under 30 seconds.",
+    bg: "bg-(--color-accent-subtle)",
+    iconColor: "text-(--color-accent)",
   },
   {
     icon: BarChart2,
     title: "7 scored categories",
     desc: "Parseability, structure, skills, experience, impact, formatting and contact.",
+    bg: "bg-(--color-good-subtle)",
+    iconColor: "text-(--color-good)",
   },
   {
     icon: Shield,
     title: "Evidence-backed",
     desc: "Every finding traces back to the exact part of your resume that produced it.",
+    bg: "bg-(--color-warn-subtle)",
+    iconColor: "text-(--color-warn)",
   },
 ];
 
@@ -55,15 +61,12 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="border-t border-(--color-line) bg-(--color-surface-raised)">
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-0 sm:grid-cols-3">
-          {FEATURES.map(({ icon: Icon, title, desc }, i) => (
-            <div
-              key={title}
-              className={`px-8 py-8 ${i < FEATURES.length - 1 ? "border-b border-(--color-line) sm:border-b-0 sm:border-r" : ""}`}
-            >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-(--color-accent-subtle)">
-                <Icon size={17} className="text-(--color-accent)" />
+      <section className="border-t border-(--color-line) bg-(--color-surface-raised) px-6 py-10">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+          {FEATURES.map(({ icon: Icon, title, desc, bg, iconColor }) => (
+            <div key={title} className={`rounded-2xl p-6 ${bg}`}>
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/60">
+                <Icon size={17} className={iconColor} />
               </div>
               <p className="mt-4 font-semibold">{title}</p>
               <p className="mt-1 text-sm text-(--color-ink-muted)">{desc}</p>

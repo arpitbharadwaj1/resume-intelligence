@@ -26,7 +26,7 @@ function displayScore(score: number, weight: number): number {
 
 export function ScoreBreakdown({ categories }: Props) {
   return (
-    <div className="rounded-lg border border-(--color-line) bg-(--color-surface-raised) p-5">
+    <div>
       <h2 className="text-sm font-semibold">Score breakdown</h2>
 
       <ul className="mt-4 space-y-3">

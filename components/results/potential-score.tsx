@@ -21,7 +21,7 @@ export function PotentialScore({ result }: Props) {
   if (cappedLow <= result.total) return null;
 
   return (
-    <div className="rounded-lg border border-(--color-line) bg-(--color-surface-raised) p-5">
+    <div className="rounded-2xl border border-(--color-line) bg-(--color-accent-subtle) p-5 shadow-sm">
       <h2 className="text-sm font-semibold">Estimated potential</h2>
       <p className="mt-1 text-xs text-(--color-ink-muted)">
         If you address the top issues above with truthful, substantiable changes:

@@ -6,14 +6,32 @@ export const metadata: Metadata = { title: "Upload your resume — Resume Intell
 
 export default function UploadPage() {
   return (
-    <main className="mx-auto max-w-xl px-4 py-12">
-      <h1 className="text-2xl font-semibold tracking-tight">Upload your resume</h1>
-      <p className="mt-2 text-sm text-(--color-ink-muted)">
-        PDF or DOCX, up to 5 MB. Your file is stored privately and never shared.
-      </p>
+    <main className="mx-auto max-w-2xl px-4 py-12">
+      {/* Header */}
+      <div className="text-center">
+        <h1 className="text-3xl font-semibold tracking-tight">Analyse your resume</h1>
+        <p className="mt-3 text-base text-(--color-ink-muted)">
+          Upload your PDF or DOCX and get a scored breakdown with specific, evidence-backed improvements.
+        </p>
+      </div>
 
-      <div className="mt-8">
+      {/* Upload card */}
+      <div className="mt-10 rounded-2xl border border-(--color-line) bg-(--color-surface-raised) p-8 shadow-sm">
         <UploadForm />
+      </div>
+
+      {/* What you'll get */}
+      <div className="mt-8 grid grid-cols-3 gap-4 text-center text-sm">
+        {[
+          { label: "ATS Parseability", sub: "Can systems read it?" },
+          { label: "Evidence-backed", sub: "Every finding cited" },
+          { label: "Improvement plan", sub: "Specific actions" },
+        ].map(({ label, sub }) => (
+          <div key={label} className="rounded-xl border border-(--color-line) p-4">
+            <p className="font-medium">{label}</p>
+            <p className="mt-1 text-(--color-ink-muted)">{sub}</p>
+          </div>
+        ))}
       </div>
     </main>
   );

@@ -2,11 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 import { Findings } from "@/components/results/findings";
 import { PotentialScore } from "@/components/results/potential-score";
 import { Recommendations } from "@/components/results/recommendations";
 import { RoleReadinessCard } from "@/components/results/role-readiness-card";
 import { JobMatchCard } from "@/components/results/job-match-card";
+import { RewriteTool } from "@/components/results/rewrite-tool";
 import { ScoreBreakdown } from "@/components/results/score-breakdown";
 import { ScoreRing } from "@/components/results/score-ring";
 import { getAnalysisResult } from "@/lib/db/get-result";
@@ -105,6 +108,8 @@ export default async function ResultsPage({ params }: Props) {
             {recommendations.length > 0 && (
               <Recommendations recommendations={recommendations} />
             )}
+
+            <RewriteTool />
 
             {/* Footer */}
             {analysisId !== "preview" && (
